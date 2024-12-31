@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Font Import */
+
+
+/* Base Styles */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-brand-dark text-brand-light font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-brand-dark;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand-neon/50 rounded-full hover:bg-brand-neon/70 transition-colors;
+  }
+}
+
+/* Common Components */
+@layer components {
+  .neon-text {
+    @apply text-brand-neon;
+    text-shadow: 0 0 10px rgba(64, 224, 208, 0.5);
+  }
+
+  .neon-border {
+    @apply border-brand-neon;
+    box-shadow: 0 0 10px rgba(64, 224, 208, 0.3);
+  }
+
+  .nav-link {
+    @apply relative px-3 py-2 text-brand-light hover:text-brand-neon transition-colors;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-brand-neon transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .btn {
+    @apply px-6 py-2 rounded-md transition-all duration-300 transform hover:scale-105;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-neon text-brand-dark hover:shadow-neon;
+  }
+
+  .btn-outline {
+    @apply btn border border-brand-neon text-brand-neon hover:bg-brand-neon hover:text-brand-dark;
+  }
+}
+
+/* Animations */
+@layer utilities {
+  /* Fade In */
+  .fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  /* Slide In */
+  .slide-in {
+    animation: slideIn 0.5s ease-out;
+  }
+
+  @keyframes slideIn {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /* Neon Pulse */
+  .neon-pulse {
+    animation: neonPulse 2s infinite;
+  }
+
+  @keyframes neonPulse {
+    0% { box-shadow: 0 0 5px #40E0D0, 0 0 10px #40E0D0; }
+    50% { box-shadow: 0 0 20px #40E0D0, 0 0 30px #40E0D0; }
+    100% { box-shadow: 0 0 5px #40E0D0, 0 0 10px #40E0D0; }
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
+  }
+
+  .hover-glow {
+    @apply transition-shadow duration-300 hover:shadow-neon;
+  }
+}
+
+/* Responsive Typography */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Loading States */
+.loading {
+  @apply animate-pulse bg-brand-secondary/30;
+}
+
+/* Glass Effect */
+.glass {
+  @apply backdrop-blur-md bg-white/10;
+}
+
+/* Grid Layout Helpers */
+.grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Motion Safe/Reduce Animations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    @apply text-black bg-white;
+  }
+}
+
+/* Focus Styles */
+:focus-visible {
+  @apply outline-none ring-2 ring-brand-neon ring-offset-2 ring-offset-brand-dark;
+}
+
+/* Custom Selection Color */
+::selection {
+  @apply bg-brand-neon/30 text-brand-light;
+}
