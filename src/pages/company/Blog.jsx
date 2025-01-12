@@ -1,203 +1,157 @@
-// src/pages/company/Blog.jsx
-import React, { useEffect } from 'react';
-import PropTypes from 'prop-types'; // Importation de PropTypes
+import React from 'react';
 import { Calendar, Clock, ArrowRight } from 'lucide-react';
 
-// Import des images
-import blog1 from '../../assets/images/blog-1.jpg';
-import blog2 from '../../assets/images/blog-2.jpg';
-import blog3 from '../../assets/images/blog-3.jpg';
-import blog4 from '../../assets/images/blog-4.jpg';
-import blog5 from '../../assets/images/blog-5.jpg';
-import blog6 from '../../assets/images/blog-6.jpg';
-
-/**
- * Composant BlogCard
- */
-const BlogCard = ({ title, excerpt, date, readTime, category, image }) => (
-  <article className="bg-brand-secondary/20 rounded-lg overflow-hidden hover-lift group">
-    <div className="relative aspect-video overflow-hidden">
-      <img 
-        src={image} 
-        alt={title} 
-        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-      />
-      <div className="absolute top-4 left-4">
-        <span className="bg-brand-neon text-brand-dark px-3 py-1 rounded-full text-sm font-medium">
-          {category}
-        </span>
-      </div>
-    </div>
-    <div className="p-6">
-      <div className="flex items-center gap-4 text-sm text-brand-light/60 mb-3">
-        <span className="flex items-center gap-1">
-          <Calendar size={16} />
-          {date}
-        </span>
-        <span className="flex items-center gap-1">
-          <Clock size={16} />
-          {readTime} min read
-        </span>
-      </div>
-      <h2 className="text-xl font-semibold text-brand-light mb-3 group-hover:text-brand-neon transition-colors">
-        {title}
-      </h2>
-      <p className="text-brand-light/70 mb-4">{excerpt}</p>
-      <button className="flex items-center gap-2 text-brand-neon group-hover:gap-3 transition-all">
-        Read More
-        <ArrowRight size={16} />
-      </button>
-    </div>
-  </article>
-);
-
-/**
- * Validation des PropTypes pour BlogCard
- */
-BlogCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  excerpt: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  readTime: PropTypes.number.isRequired,
-  category: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired
-};
-
-/**
- * Composant Blog (Page)
- */
 const Blog = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  // Tableau des posts de blog avec les images importées
   const blogPosts = [
     {
-      title: "The Impact of AI on Medical Interpretation",
-      excerpt: "Exploring how artificial intelligence is enhancing medical interpretation accuracy and accessibility.",
-      date: "Dec 30, 2024",
-      readTime: 5,
+      title: "Breaking Language Barriers in Healthcare: A Guide for Medical Professionals",
+      excerpt: "Discover how professional medical interpretation services are transforming healthcare delivery for non-English speaking patients.",
+      date: "January 10, 2025",
+      readTime: "5 min read",
+      category: "Healthcare",
+      image: "/images/blog/medical-interpretation.jpg"
+    },
+    {
+      title: "The Impact of Professional Interpretation in Legal Proceedings",
+      excerpt: "Understanding the crucial role of certified interpreters in ensuring fair legal representation and justice.",
+      date: "January 8, 2025",
+      readTime: "4 min read",
+      category: "Legal",
+      image: "/images/blog/legal-interpretation.jpg"
+    },
+    {
+      title: "Best Practices for Remote Interpretation Services",
+      excerpt: "Learn about the latest technologies and methodologies that are shaping the future of remote interpretation.",
+      date: "January 5, 2025",
+      readTime: "6 min read",
       category: "Technology",
-      image: blog1
+      image: "/images/blog/remote-interpretation.jpg"
     },
     {
-      title: "Best Practices for Remote Interpretation",
-      excerpt: "Tips and strategies for successful remote interpretation sessions in the digital age.",
-      date: "Dec 28, 2024",
-      readTime: 4,
-      category: "Best Practices",
-      image: blog2
-    },
-    {
-      title: "Cultural Competency in Medical Settings",
-      excerpt: "Understanding the importance of cultural awareness in healthcare interpretation.",
-      date: "Dec 25, 2024",
-      readTime: 6,
-      category: "Healthcare",
-      image: blog3
-    },
-    {
-      title: "Conference Interpretation: A Complete Guide",
-      excerpt: "Everything you need to know about professional conference interpretation services.",
-      date: "Dec 22, 2024",
-      readTime: 7,
-      category: "Guide",
-      image: blog4
-    },
-    {
-      title: "Language Access in Healthcare",
-      excerpt: "Breaking down barriers to healthcare through professional interpretation services.",
-      date: "Dec 20, 2024",
-      readTime: 5,
-      category: "Healthcare",
-      image: blog5
-    },
-    {
-      title: "The Future of Language Services",
-      excerpt: "Emerging trends and technologies shaping the future of interpretation services.",
-      date: "Dec 18, 2024",
-      readTime: 6,
-      category: "Industry Insights",
-      image: blog6
+      title: "Cultural Competency in Business Interpretation",
+      excerpt: "Exploring the importance of cultural awareness in business communications and international negotiations.",
+      date: "January 3, 2025",
+      readTime: "4 min read",
+      category: "Business",
+      image: "/images/blog/business-culture.jpg"
     }
   ];
 
   const categories = [
-    "All",
-    "Technology",
-    "Healthcare",
-    "Best Practices",
-    "Industry Insights",
-    "Guide"
+    "All", "Healthcare", "Legal", "Business", "Technology", "Education"
   ];
 
   return (
-    <div className="min-h-screen bg-brand-dark py-20 px-4">
-      <div className="container mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-brand-light mb-4">Blog</h1>
-          <p className="text-xl text-brand-light/70 max-w-2xl mx-auto">
-            Insights, updates, and resources for interpretation professionals and clients
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-primary-900 to-primary-800 py-20 text-white">
+        <div className="container-fluid">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">DBD I&T Blog</h1>
+          <p className="text-xl text-primary-100 max-w-3xl">
+            Insights and updates from the world of professional interpretation services.
           </p>
         </div>
+      </section>
 
-        {/* Categories */}
-        <div className="flex flex-wrap gap-4 justify-center mb-12">
-          {categories.map((category) => (
-            <button
-              key={category}
-              className={`px-4 py-2 rounded-full transition-all
-                ${category === 'All' 
-                  ? 'bg-brand-neon text-brand-dark' 
-                  : 'bg-brand-secondary/20 text-brand-light hover:bg-brand-secondary/30'
-                }`}
-            >
-              {category}
-            </button>
-          ))}
+      {/* Categories */}
+      <section className="border-b">
+        <div className="container-fluid py-6">
+          <div className="flex flex-wrap gap-4">
+            {categories.map((category) => (
+              <button
+                key={category}
+                className={`px-4 py-2 rounded-full text-sm font-medium 
+                          ${category === 'All' 
+                            ? 'bg-primary-600 text-white' 
+                            : 'bg-neutral-100 text-neutral-700 hover:bg-neutral-200'}`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
         </div>
+      </section>
 
-        {/* Blog Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, index) => (
-            <BlogCard key={index} {...post} />
-          ))}
-        </div>
+      {/* Blog Posts Grid */}
+      <section className="py-16">
+        <div className="container-fluid">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {blogPosts.map((post) => (
+              <article 
+                key={post.title}
+                className="bg-white rounded-xl shadow-soft overflow-hidden hover:shadow-lg 
+                         transition-shadow duration-300"
+              >
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-6">
+                  <div className="flex items-center space-x-4 text-sm text-neutral-500 mb-4">
+                    <span className="flex items-center">
+                      <Calendar size={16} className="mr-1" />
+                      {post.date}
+                    </span>
+                    <span className="flex items-center">
+                      <Clock size={16} className="mr-1" />
+                      {post.readTime}
+                    </span>
+                    <span className="bg-primary-100 text-primary-700 px-2 py-1 rounded-full">
+                      {post.category}
+                    </span>
+                  </div>
+                  <h2 className="text-xl font-bold mb-3 text-neutral-900">
+                    {post.title}
+                  </h2>
+                  <p className="text-neutral-600 mb-4">
+                    {post.excerpt}
+                  </p>
+                  <button className="text-primary-600 font-medium inline-flex items-center 
+                                   hover:text-primary-700 transition-colors duration-200">
+                    Read More
+                    <ArrowRight size={16} className="ml-1" />
+                  </button>
+                </div>
+              </article>
+            ))}
+          </div>
 
-        {/* Newsletter Signup */}
-        <div className="mt-20 bg-brand-neon/10 rounded-xl p-8 backdrop-blur-sm text-center">
-          <h2 className="text-2xl font-semibold text-brand-light mb-4">
-            Stay Updated
-          </h2>
-          <p className="text-brand-light/70 mb-6 max-w-2xl mx-auto">
-            Subscribe to our newsletter for the latest insights and updates in the interpretation industry
-          </p>
-          <div className="flex gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-2 rounded-lg bg-brand-dark/50 text-brand-light placeholder-brand-light/50 focus:outline-none focus:ring-2 focus:ring-brand-neon"
-            />
-            <button className="btn-primary whitespace-nowrap">
-              Subscribe
+          {/* Load More Button */}
+          <div className="text-center mt-12">
+            <button className="btn bg-white border border-primary-600 text-primary-600 
+                           hover:bg-primary-50">
+              Load More Posts
             </button>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <section className="bg-primary-50 py-16">
+        <div className="container-fluid max-w-2xl text-center">
+          <h2 className="text-2xl font-bold mb-4">Stay Updated</h2>
+          <p className="text-neutral-600 mb-6">
+            Subscribe to our newsletter for the latest insights in interpretation services.
+          </p>
+          <form className="flex gap-4 flex-col sm:flex-row">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-grow px-4 py-2 rounded-lg border border-neutral-300 
+                       focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+            />
+            <button 
+              type="submit"
+              className="btn bg-primary-600 text-white hover:bg-primary-700 whitespace-nowrap"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </section>
     </div>
   );
-};
-
-/**
- * Validation des PropTypes pour Blog
- * 
- * Dans ce cas, le composant Blog ne reçoit pas de props,
- * mais si vous envisagez de le faire à l'avenir, vous pouvez ajouter les validations ici.
- */
-Blog.propTypes = {
-  // Aucune prop reçue actuellement
 };
 
 export default Blog;

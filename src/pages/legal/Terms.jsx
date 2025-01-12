@@ -1,109 +1,156 @@
-// src/pages/legal/Terms.jsx
-import { useEffect } from 'react';
+import React from 'react';
+import { FileText, CheckCircle, AlertCircle, Scale } from 'lucide-react';
 
 const Terms = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const lastUpdated = 'January 1, 2025';
 
   return (
-    <div className="min-h-screen bg-brand-dark py-20 px-4">
-      <div className="container mx-auto">
-        <h1 className="text-4xl font-bold text-brand-light mb-8">Terms of Service</h1>
-        <div className="prose prose-invert max-w-none text-brand-light/80">
-          <p className="text-lg mb-8">
-            Last updated: December 30, 2024
-          </p>
+    <div className="min-h-screen pt-16">
+      {/* Header */}
+      <section className="bg-white py-16 border-b border-secondary-200">
+        <div className="container-fluid">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl font-bold mb-4 text-primary-700 animate-fade-in">
+              Terms of Service
+            </h1>
+            <p className="text-secondary-600">Last updated: {lastUpdated}</p>
+          </div>
+        </div>
+      </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold text-brand-light mb-4">1. Service Overview</h2>
-            <p className="mb-4">
-              DBD I&T operates as a platform connecting professional interpreters with clients needing 
-              interpretation services. We facilitate these connections while maintaining high standards 
-              of service quality and professional conduct.
-            </p>
-          </section>
+      {/* Quick Links */}
+      <nav className="bg-white border-b sticky top-16 z-10 shadow-sm">
+        <div className="container-fluid py-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex gap-6 overflow-x-auto">
+              <a href="#services" className="text-sm font-medium text-secondary-600 hover:text-primary-600 whitespace-nowrap transition-colors">
+                Services
+              </a>
+              <a href="#user-responsibilities" className="text-sm font-medium text-secondary-600 hover:text-primary-600 whitespace-nowrap transition-colors">
+                User Responsibilities
+              </a>
+              <a href="#payment" className="text-sm font-medium text-secondary-600 hover:text-primary-600 whitespace-nowrap transition-colors">
+                Payment Terms
+              </a>
+              <a href="#liability" className="text-sm font-medium text-secondary-600 hover:text-primary-600 whitespace-nowrap transition-colors">
+                Liability
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold text-brand-light mb-4">2. User Relationships</h2>
-            
-            <h3 className="text-xl font-semibold text-brand-light mb-3">2.1 Clients</h3>
-            <p className="mb-4">
-              By using our services, clients agree to:
-            </p>
-            <ul className="list-disc pl-6 mb-6">
-              <li>Provide accurate information about their interpretation needs</li>
-              <li>Pay for services according to agreed rates</li>
-              <li>Respect scheduled appointment times</li>
-              <li>Provide reasonable notice for cancellations</li>
-            </ul>
+      {/* Main Content */}
+      <div className="py-12 bg-white">
+        <div className="container-fluid">
+          <div className="max-w-4xl mx-auto">
+            {/* Introduction */}
+            <section className="mb-12 animate-fade-in">
+              <p className="text-secondary-600 mb-6 text-lg">
+                These Terms of Service (&quot;Terms&quot;) govern your access to and use of DBD I&T&apos;s interpretation
+                services. By using our services, you agree to be bound by these Terms.
+              </p>
+            </section>
 
-            <h3 className="text-xl font-semibold text-brand-light mb-3">2.2 Interpreters</h3>
-            <p className="mb-4">
-              Interpreters on our platform agree to:
-            </p>
-            <ul className="list-disc pl-6 mb-6">
-              <li>Maintain current certifications and qualifications</li>
-              <li>Adhere to professional interpretation standards</li>
-              <li>Maintain confidentiality of client information</li>
-              <li>Provide services as scheduled and agreed upon</li>
-            </ul>
-          </section>
+            {/* Services */}
+            <section id="services" className="mb-16">
+              <div className="flex items-center mb-6">
+                <div className="p-2 bg-primary-50 rounded-lg mr-3">
+                  <FileText className="text-primary-500" size={24} />
+                </div>
+                <h2 className="text-2xl font-bold text-primary-700">Services</h2>
+              </div>
+              <div className="space-y-4 text-secondary-600">
+                <p>DBD I&T provides professional interpretation services, including:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>On-site interpretation services</li>
+                  <li>Medical interpretation</li>
+                  <li>Legal interpretation</li>
+                  <li>Business interpretation</li>
+                  <li>Community services interpretation</li>
+                </ul>
+              </div>
+            </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold text-brand-light mb-4">3. Service Fees and Payments</h2>
-            <ul className="list-disc pl-6 mb-6">
-              <li>Service rates are clearly communicated before booking</li>
-              <li>Platform fees are deducted from interpreter payments</li>
-              <li>Cancellation fees may apply based on notice period</li>
-              <li>Payment processing is handled securely through our platform</li>
-            </ul>
-          </section>
+            {/* User Responsibilities */}
+            <section id="user-responsibilities" className="mb-16">
+              <div className="flex items-center mb-6">
+                <div className="p-2 bg-primary-50 rounded-lg mr-3">
+                  <CheckCircle className="text-primary-500" size={24} />
+                </div>
+                <h2 className="text-2xl font-bold text-primary-700">User Responsibilities</h2>
+              </div>
+              <div className="space-y-4 text-secondary-600">
+                <p>As a user of our services, you agree to:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Provide accurate and complete information</li>
+                  <li>Maintain the confidentiality of your account</li>
+                  <li>Use services in compliance with applicable laws</li>
+                  <li>Respect interpreter schedules and appointments</li>
+                  <li>Pay for services as agreed</li>
+                </ul>
+              </div>
+            </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold text-brand-light mb-4">4. Cancellation Policy</h2>
-            <p className="mb-4">
-              Our cancellation policy is designed to protect both clients and interpreters:
-            </p>
-            <ul className="list-disc pl-6 mb-6">
-              <li>24+ hours notice: No charge</li>
-              <li>12-24 hours notice: 50% of service fee</li>
-              <li>Less than 12 hours: Full service fee</li>
-              <li>Emergency situations are evaluated case-by-case</li>
-            </ul>
-          </section>
+            {/* Payment Terms */}
+            <section id="payment" className="mb-16">
+              <div className="flex items-center mb-6">
+                <div className="p-2 bg-primary-50 rounded-lg mr-3">
+                  <Scale className="text-primary-500" size={24} />
+                </div>
+                <h2 className="text-2xl font-bold text-primary-700">Payment Terms</h2>
+              </div>
+              <div className="space-y-4 text-secondary-600">
+                <p>Our payment terms include:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Payment is required before service delivery</li>
+                  <li>Accepted payment methods: credit cards, bank transfers</li>
+                  <li>Cancellation policy and refund terms</li>
+                  <li>Late payment fees and penalties</li>
+                </ul>
+              </div>
+            </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold text-brand-light mb-4">5. Quality Assurance</h2>
-            <p className="mb-4">
-              We maintain service quality through:
-            </p>
-            <ul className="list-disc pl-6 mb-6">
-              <li>Regular interpreter performance reviews</li>
-              <li>Client feedback collection and analysis</li>
-              <li>Continuous professional development requirements</li>
-              <li>Quality monitoring and improvement processes</li>
-            </ul>
-          </section>
+            {/* Liability */}
+            <section id="liability" className="mb-16">
+              <div className="flex items-center mb-6">
+                <div className="p-2 bg-primary-50 rounded-lg mr-3">
+                  <AlertCircle className="text-primary-500" size={24} />
+                </div>
+                <h2 className="text-2xl font-bold text-primary-700">Liability</h2>
+              </div>
+              <div className="space-y-4 text-secondary-600">
+                <p>
+                  DBD I&T strives to provide high-quality interpretation services but cannot guarantee
+                  perfect accuracy in all situations. We limit our liability as permitted by law.
+                </p>
+              </div>
+            </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold text-brand-light mb-4">6. Governing Law</h2>
-            <p className="mb-4">
-              These terms are governed by the laws of the Commonwealth of Massachusetts, United States. 
-              Any disputes shall be subject to the exclusive jurisdiction of the courts in Massachusetts.
-            </p>
-          </section>
-
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold text-brand-light mb-4">7. Contact Information</h2>
-            <p className="mb-4">
-              For questions about these terms, please contact us at:
-              <br />
-              Email: legal@dbdit.com
-              <br />
-              Address: Massachusetts, United States
-            </p>
-          </section>
+            {/* Contact Section */}
+            <section className="bg-secondary-50 p-8 rounded-xl mt-16 border border-secondary-200">
+              <h2 className="text-xl font-bold mb-4 text-primary-700">Questions About Our Terms?</h2>
+              <p className="text-secondary-600 mb-6">
+                If you have any questions about these Terms of Service, please contact us at:
+              </p>
+              <div className="space-y-4">
+                <a 
+                  href="mailto:legal@dbdit.com" 
+                  className="text-primary-500 hover:text-primary-600 flex items-center transition-colors"
+                >
+                  legal@dbdit.com
+                </a>
+                <a 
+                  href="https://dbdanit.co/contact" 
+                  className="inline-flex items-center btn bg-primary-500 text-text-light 
+                           hover:bg-primary-600 transform hover:scale-105 transition-all 
+                           duration-200 shadow-lg hover:shadow-xl"
+                >
+                  Contact Us
+                </a>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
     </div>

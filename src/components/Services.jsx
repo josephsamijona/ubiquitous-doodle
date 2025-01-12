@@ -1,197 +1,117 @@
-// src/components/Services.jsx
-import { useState } from 'react';
-import PropTypes from 'prop-types'; // Importation de PropTypes
-import { 
-  Stethoscope, 
-  Globe2, 
-  Users,
-  ArrowRight,
-  Building2,
-  GraduationCap,
-  HeartPulse,
-  UserRound,
-  Brain,
-  Video,
-  Briefcase,
-  Scale
-} from 'lucide-react';
-import medicalImage from '../assets/images/medical-interpreting.jpg'; // Ajout des points-virgules
-import conferenceImage from '../assets/images/conference-interpreting.jpg';
-import communityImage from '../assets/images/community-interpreting.jpg';
+import React from 'react';
+import { Stethoscope, Building2, GraduationCap, Scale, Globe, Users } from 'lucide-react';
 
-// Définition des icônes pour chaque service
-const icons = {
-  medical: {
-    main: Stethoscope,
-    sub: [HeartPulse, UserRound, Brain]
-  },
-  conference: {
-    main: Globe2,
-    sub: [Video, Briefcase, GraduationCap]
-  },
-  community: {
-    main: Users,
-    sub: [Scale, Building2, GraduationCap]
-  }
-};
-
-// Composant ServiceCard avec validation des props
-const ServiceCard = ({ service, isActive, onClick }) => {
-  const MainIcon = icons[service.id].main;
-
-  return (
-    <div 
-      className={`
-        relative overflow-hidden rounded-xl p-6 cursor-pointer transition-all duration-300
-        ${isActive 
-          ? 'bg-brand-neon/10 shadow-neon' 
-          : 'bg-brand-secondary/20 hover:bg-brand-secondary/30'
-        }
-      `}
-      onClick={onClick}
-    >
-      <div className="flex items-start gap-4">
-        <div className={`
-          p-3 rounded-lg transition-colors duration-300
-          ${isActive ? 'bg-brand-neon text-brand-dark' : 'bg-brand-neon/20 text-brand-neon'}
-        `}>
-          <MainIcon className="w-6 h-6" />
-        </div>
-        
-        <div className="flex-1">
-          <h3 className="text-xl font-semibold text-brand-light mb-2">
-            {service.title}
-          </h3>
-          <p className="text-brand-light/70 mb-4">
-            {service.description}
-          </p>
-          
-          {isActive && (
-            <div className="grid gap-4 mt-6 animate-fadeIn">
-              {service.subServices.map((sub, idx) => {
-                const IconComponent = icons[service.id].sub[idx]; // Assignation à une variable majuscule
-
-                return (
-                  <div 
-                    key={idx} 
-                    className="flex items-center gap-3 text-brand-light/80 hover:text-brand-neon transition-colors"
-                  >
-                    {IconComponent && <IconComponent className="w-5 h-5" />} {/* Utilisation de la variable */}
-                    <span>{sub}</span>
-                  </div>
-                );
-              })}
-            </div>
-          )}
-        </div>
-        
-        <ArrowRight className={`
-          w-5 h-5 transition-transform duration-300
-          ${isActive ? 'rotate-90 text-brand-neon' : 'text-brand-light/50'}
-        `} />
+const ServiceCard = ({ title, description, icon: Icon, features }) => (
+  <div className="group bg-white rounded-xl shadow-soft p-6 hover:shadow-lg transition-all duration-300">
+    <div className="flex items-center space-x-4 mb-4">
+      <div className="p-3 bg-primary-100 rounded-lg group-hover:bg-primary-200 transition-colors duration-300">
+        <Icon size={24} className="text-primary-600" />
       </div>
+      <h3 className="text-xl font-bold text-neutral-900">{title}</h3>
     </div>
-  );
-};
+    <p className="text-neutral-600 mb-4">{description}</p>
+    <ul className="space-y-2">
+      {features.map((feature, index) => (
+        <li key={index} className="flex items-center text-sm text-neutral-700">
+          <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2" />
+          {feature}
+        </li>
+      ))}
+    </ul>
+  </div>
+);
 
-// Définition des PropTypes pour ServiceCard
-ServiceCard.propTypes = {
-  service: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    subServices: PropTypes.arrayOf(PropTypes.string).isRequired,
-    image: PropTypes.string.isRequired
-  }).isRequired,
-  isActive: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired
-};
-
-// Composant Services avec validation des props
 const Services = () => {
-  const [activeService, setActiveService] = useState('medical');
-
   const services = [
     {
-      id: 'medical',
       title: 'Medical Interpretation',
-      description: 'Professional medical interpretation services ensuring accurate communication in healthcare settings.',
-      subServices: [
+      description: 'Professional medical interpretation ensuring accurate communication in healthcare settings.',
+      icon: Stethoscope,
+      features: [
         'Emergency room support',
         'Patient consultations',
-        'Mental health sessions'
-      ],
-      image: medicalImage
+        'Mental health sessions',
+        'Medical procedures',
+      ]
     },
     {
-      id: 'conference',
-      title: 'Conference Interpretation',
-      description: 'Seamless interpretation for international events and professional meetings.',
-      subServices: [
+      title: 'Legal Interpretation',
+      description: 'Precise legal interpretation services for courts, law firms, and legal proceedings.',
+      icon: Scale,
+      features: [
+        'Court hearings',
+        'Depositions',
+        'Legal consultations',
+        'Document review sessions',
+      ]
+    },
+    {
+      title: 'Business Interpretation',
+      description: 'Professional interpretation for corporate meetings and business events.',
+      icon: Building2,
+      features: [
+        'Board meetings',
+        'Negotiations',
+        'Training sessions',
         'International conferences',
-        'Business meetings',
-        'Academic symposiums'
-      ],
-      image: conferenceImage
+      ]
     },
     {
-      id: 'community',
-      title: 'Community Services',
-      description: 'Breaking barriers in legal and educational settings.',
-      subServices: [
-        'Legal proceedings',
-        'Educational settings',
-        'Social services support'
-      ],
-      image: communityImage
+      title: 'Educational Interpretation',
+      description: 'Supporting communication in educational settings.',
+      icon: GraduationCap,
+      features: [
+        'Parent-teacher meetings',
+        'Special education services',
+        'Academic conferences',
+        'Student counseling',
+      ]
+    },
+    {
+      title: 'Community Interpretation',
+      description: 'Breaking barriers in community settings and social services.',
+      icon: Users,
+      features: [
+        'Social services appointments',
+        'Housing assistance',
+        'Community outreach',
+        'Public services',
+      ]
+    },
+    {
+      title: 'International Events',
+      description: 'Comprehensive interpretation for international gatherings and events.',
+      icon: Globe,
+      features: [
+        'Cultural events',
+        'International forums',
+        'Diplomatic meetings',
+        'Global conferences',
+      ]
     }
   ];
 
   return (
-    <div className="bg-brand-dark py-16 px-4">
-      <div className="container mx-auto">
-        {/* Section Header */}
+    <section className="py-20 bg-neutral-50">
+      <div className="container-fluid">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-brand-light mb-4">Our Services</h2>
-          <p className="text-xl text-brand-light/70 max-w-2xl mx-auto">
-            Professional interpretation services tailored to your specific needs
+          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+            Our Services
+          </h2>
+          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+            Professional interpretation services tailored to your specific needs,
+            delivered with excellence and cultural sensitivity
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Services Cards */}
-          <div className="space-y-6">
-            {services.map((service) => (
-              <ServiceCard
-                key={service.id}
-                service={service}
-                isActive={activeService === service.id}
-                onClick={() => setActiveService(service.id)}
-              />
-            ))}
-          </div>
-
-          {/* Service Image Preview */}
-          <div className="hidden lg:block sticky top-20">
-            <div className="relative aspect-video rounded-xl overflow-hidden">
-              <img
-                src={services.find(s => s.id === activeService)?.image}
-                alt={services.find(s => s.id === activeService)?.title}
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark/80 to-transparent" />
-            </div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <ServiceCard key={service.title} {...service} />
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-// Définition des PropTypes pour Services (si nécessaire)
-Services.propTypes = {
-  // Dans ce cas, Services ne reçoit pas de props, donc aucun PropType n'est requis.
 };
 
 export default Services;

@@ -1,93 +1,157 @@
-// src/pages/legal/Privacy.jsx
-import { useEffect } from 'react';
+import React from 'react';
+import { Shield, Lock, Eye, FileText } from 'lucide-react';
 
 const Privacy = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const lastUpdated = 'January 1, 2025';
 
   return (
-    <div className="min-h-screen bg-brand-dark py-20 px-4">
-      <div className="container mx-auto">
-        <h1 className="text-4xl font-bold text-brand-light mb-8">Privacy Policy</h1>
-        <div className="prose prose-invert max-w-none text-brand-light/80">
-          <p className="text-lg mb-8">
-            Last updated: December 30, 2024
-          </p>
+    <div className="min-h-screen pt-16">
+      {/* Header */}
+      <section className="bg-white py-16 border-b border-secondary-200">
+        <div className="container-fluid">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl font-bold mb-4 text-primary-700 animate-fade-in">
+              Privacy Policy
+            </h1>
+            <p className="text-secondary-600">Last updated: {lastUpdated}</p>
+          </div>
+        </div>
+      </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold text-brand-light mb-4">Our Commitment to Privacy</h2>
-            <p className="mb-4">
-              At DBD I&T, we understand the sensitive nature of interpretation services and the importance 
-              of maintaining confidentiality. We are committed to protecting the privacy of both our clients 
-              and interpreters while providing high-quality interpretation services.
-            </p>
-          </section>
+      {/* Quick Links */}
+      <nav className="bg-white border-b sticky top-16 z-10 shadow-sm">
+        <div className="container-fluid py-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex gap-6 overflow-x-auto">
+              <a href="#collection" className="text-sm font-medium text-secondary-600 hover:text-primary-600 whitespace-nowrap transition-colors">
+                Information Collection
+              </a>
+              <a href="#use" className="text-sm font-medium text-secondary-600 hover:text-primary-600 whitespace-nowrap transition-colors">
+                Information Use
+              </a>
+              <a href="#sharing" className="text-sm font-medium text-secondary-600 hover:text-primary-600 whitespace-nowrap transition-colors">
+                Information Sharing
+              </a>
+              <a href="#security" className="text-sm font-medium text-secondary-600 hover:text-primary-600 whitespace-nowrap transition-colors">
+                Data Security
+              </a>
+              <a href="#rights" className="text-sm font-medium text-secondary-600 hover:text-primary-600 whitespace-nowrap transition-colors">
+                Your Rights
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold text-brand-light mb-4">Information We Collect</h2>
-            <h3 className="text-xl font-semibold text-brand-light mb-3">For Clients:</h3>
-            <ul className="list-disc pl-6 mb-6">
-              <li>Contact information (name, email, phone number)</li>
-              <li>Business information when applicable</li>
-              <li>Service preferences and requirements</li>
-              <li>Session feedback and ratings</li>
-            </ul>
+      {/* Main Content */}
+      <div className="py-12 bg-white">
+        <div className="container-fluid">
+          <div className="max-w-4xl mx-auto">
+            {/* Introduction */}
+            <section className="mb-12 animate-fade-in">
+              <p className="text-secondary-600 mb-6 text-lg">
+                At DBD I&T, we take your privacy seriously. This Privacy Policy explains how we collect,
+                use, disclose, and safeguard your information when you use our interpretation services.
+                Please read this policy carefully.
+              </p>
+            </section>
 
-            <h3 className="text-xl font-semibold text-brand-light mb-3">For Interpreters:</h3>
-            <ul className="list-disc pl-6 mb-6">
-              <li>Professional qualifications and certifications</li>
-              <li>Language proficiency information</li>
-              <li>Availability and scheduling preferences</li>
-              <li>Performance metrics and client feedback</li>
-            </ul>
-          </section>
+            {/* Information Collection */}
+            <section id="collection" className="mb-16">
+              <div className="flex items-center mb-6">
+                <div className="p-2 bg-primary-50 rounded-lg mr-3">
+                  <Eye className="text-primary-500" size={24} />
+                </div>
+                <h2 className="text-2xl font-bold text-primary-700">Information Collection</h2>
+              </div>
+              <div className="space-y-4 text-secondary-600">
+                <p>We collect information that you provide directly to us, including:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Personal identification information</li>
+                  <li>Contact information</li>
+                  <li>Service preferences</li>
+                  <li>Payment information</li>
+                </ul>
+              </div>
+            </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold text-brand-light mb-4">Confidentiality in Medical Interpretation</h2>
-            <p className="mb-4">
-              We adhere to HIPAA guidelines and maintain strict confidentiality protocols for all medical 
-              interpretation sessions. Our interpreters are trained in healthcare privacy requirements and 
-              sign comprehensive confidentiality agreements.
-            </p>
-          </section>
+            {/* Information Use */}
+            <section id="use" className="mb-16">
+              <div className="flex items-center mb-6">
+                <div className="p-2 bg-primary-50 rounded-lg mr-3">
+                  <FileText className="text-primary-500" size={24} />
+                </div>
+                <h2 className="text-2xl font-bold text-primary-700">Information Use</h2>
+              </div>
+              <div className="space-y-4 text-secondary-600">
+                <p>We use the collected information for:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Providing and improving our interpretation services</li>
+                  <li>Processing payments</li>
+                  <li>Communicating with you</li>
+                  <li>Marketing and promotional purposes (with consent)</li>
+                </ul>
+              </div>
+            </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold text-brand-light mb-4">Data Security</h2>
-            <p className="mb-4">
-              We employ industry-standard security measures to protect your information:
-            </p>
-            <ul className="list-disc pl-6 mb-6">
-              <li>Encrypted data transmission</li>
-              <li>Secure server infrastructure</li>
-              <li>Regular security audits</li>
-              <li>Restricted access protocols</li>
-            </ul>
-          </section>
+            {/* Information Sharing */}
+            <section id="sharing" className="mb-16">
+              <div className="flex items-center mb-6">
+                <div className="p-2 bg-primary-50 rounded-lg mr-3">
+                  <Shield className="text-primary-500" size={24} />
+                </div>
+                <h2 className="text-2xl font-bold text-primary-700">Information Sharing</h2>
+              </div>
+              <div className="space-y-4 text-secondary-600">
+                <p>We may share your information with:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Service providers and partners</li>
+                  <li>Legal authorities when required by law</li>
+                  <li>Professional interpreters (limited information)</li>
+                </ul>
+              </div>
+            </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold text-brand-light mb-4">Ethical Guidelines</h2>
-            <p className="mb-4">
-              Our privacy practices are guided by:
-            </p>
-            <ul className="list-disc pl-6 mb-6">
-              <li>Professional interpreter ethics codes</li>
-              <li>Healthcare privacy regulations</li>
-              <li>Legal interpretation confidentiality standards</li>
-              <li>Industry best practices</li>
-            </ul>
-          </section>
+            {/* Data Security */}
+            <section id="security" className="mb-16">
+              <div className="flex items-center mb-6">
+                <div className="p-2 bg-primary-50 rounded-lg mr-3">
+                  <Lock className="text-primary-500" size={24} />
+                </div>
+                <h2 className="text-2xl font-bold text-primary-700">Data Security</h2>
+              </div>
+              <div className="space-y-4 text-secondary-600">
+                <p>
+                  We implement appropriate technical and organizational measures to maintain the security
+                  of your personal information, including encryption and secure data storage.
+                </p>
+              </div>
+            </section>
 
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold text-brand-light mb-4">Contact Information</h2>
-            <p className="mb-4">
-              For privacy concerns or questions, please contact our Privacy Officer at:
-              <br />
-              Email: privacy@dbdit.com
-              <br />
-              Address: Massachusetts, United States
-            </p>
-          </section>
+            {/* Contact Section */}
+            <section className="bg-secondary-50 p-8 rounded-xl mt-16 border border-secondary-200">
+              <h2 className="text-xl font-bold mb-4 text-primary-700">Questions About Our Privacy Policy?</h2>
+              <p className="text-secondary-600 mb-6">
+                If you have any questions about this Privacy Policy, please contact us at:
+              </p>
+              <div className="space-y-4">
+                <a 
+                  href="mailto:privacy@dbdit.com" 
+                  className="text-primary-500 hover:text-primary-600 flex items-center transition-colors"
+                >
+                  privacy@dbdit.com
+                </a>
+                <a 
+                  href="https://dbdanit.co/contact" 
+                  className="inline-flex items-center btn bg-primary-500 text-text-light 
+                           hover:bg-primary-600 transform hover:scale-105 transition-all 
+                           duration-200 shadow-lg hover:shadow-xl"
+                >
+                  Contact Us
+                </a>
+              </div>
+            </section>
+          </div>
         </div>
       </div>
     </div>

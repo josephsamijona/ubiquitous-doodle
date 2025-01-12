@@ -1,125 +1,110 @@
-// src/components/About.jsx
-import { Users, Star, Shield, Lightbulb, CheckCircle2, Award, HeartHandshake } from 'lucide-react'
-import aboutImage from '../assets/images/about-team.jpg'
-import PropTypes from 'prop-types';
-
-const AboutCard = ({ title, items, icon: Icon }) => (
-  <div className="bg-brand-secondary/20 p-6 rounded-lg hover-lift backdrop-blur-sm">
-    <div className="flex items-center gap-4 mb-4">
-      <div className="p-3 bg-brand-neon/10 rounded-lg">
-        <Icon className="text-brand-neon w-6 h-6" />
-      </div>
-      <h3 className="text-xl font-semibold text-brand-light">{title}</h3>
-    </div>
-    <ul className="space-y-3">
-      {items.map((item, index) => (
-        <li key={index} className="flex items-center gap-3 text-brand-light/80">
-          <CheckCircle2 className="w-5 h-5 text-brand-neon flex-shrink-0" />
-          <span>{item}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-)
+import React from 'react';
+import { CheckCircle, Award, Lightbulb, Heart } from 'lucide-react';
 
 const About = () => {
-  const sections = {
-    coreValues: [
-      'Excellence in Communication',
-      'Cultural Sensitivity',
-      'Professional Integrity',
-      'Innovation in Service Delivery'
-    ],
-    approach: [
-      'Rigorous interpreter selection',
-      'Quality assurance protocols',
-      'Advanced technological solutions',
-      'Continuous professional development'
-    ],
-    teamHighlights: [
-      'Certified interpreters',
-      'Industry specialists',
-      'Technical support team',
-      'Customer service excellence'
-    ]
-  }
+  const values = [
+    {
+      icon: Award,
+      title: "Excellence in Communication",
+      description: "Delivering precise and professional interpretation services with unmatched quality."
+    },
+    {
+      icon: Heart,
+      title: "Cultural Sensitivity",
+      description: "Understanding and respecting cultural nuances in every interaction."
+    },
+    {
+      icon: CheckCircle,
+      title: "Professional Integrity",
+      description: "Maintaining the highest standards of confidentiality and ethical conduct."
+    },
+    {
+      icon: Lightbulb,
+      title: "Innovation in Service",
+      description: "Embracing modern solutions while maintaining human connection."
+    }
+  ];
 
   return (
-    <div className="bg-brand-dark py-16 px-4">
-      <div className="container mx-auto">
-        {/* Mission Section */}
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-          <div className="order-2 md:order-1">
-            <h2 className="text-3xl font-bold text-brand-light mb-6">Our Mission</h2>
-            <p className="text-xl text-brand-light/80 leading-relaxed mb-8">
-              Empowering global communication through professional interpretation services
-            </p>
-            <div className="flex items-center gap-4">
-              <HeartHandshake className="w-12 h-12 text-brand-neon" />
-              <p className="text-brand-light/70">
-                Bridging languages, connecting worlds
-              </p>
-            </div>
-          </div>
-          <div className="order-1 md:order-2 relative">
-            <img 
-              src={aboutImage} 
-              alt="DBD I&T Team" 
-              className="rounded-lg shadow-xl w-full hover:shadow-neon transition-shadow duration-300"
-            />
-            <div className="absolute -bottom-6 -right-6 bg-brand-dark p-4 rounded-lg shadow-xl">
-              <Award className="w-12 h-12 text-brand-neon" />
-            </div>
-          </div>
+    <section className="py-20 bg-white">
+      <div className="container-fluid">
+        {/* Mission */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-6">
+            Our Mission
+          </h2>
+          <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+            Empowering global communication through professional interpretation services. 
+            We bridge languages and connect worlds, ensuring every voice is heard 
+            and understood with clarity and precision.
+          </p>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AboutCard 
-            title="Core Values" 
-            items={sections.coreValues}
-            icon={Star}
-          />
-          <AboutCard 
-            title="Our Approach" 
-            items={sections.approach}
-            icon={Lightbulb}
-          />
-          <AboutCard 
-            title="Team Highlights" 
-            items={sections.teamHighlights}
-            icon={Users}
-          />
-        </div>
-
-        {/* Stats Section */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            { number: '100+', label: 'Interpreters', icon: Users },
-            { number: '20+', label: 'Languages', icon: Star },
-            { number: '24/7', label: 'Support', icon: Shield },
-            { number: '98%', label: 'Satisfaction', icon: Award }
-          ].map((stat, index) => (
-            <div key={index} className="text-center p-6 bg-brand-secondary/10 rounded-lg hover-lift">
-              <stat.icon className="w-8 h-8 text-brand-neon mx-auto mb-4" />
-              <div className="text-3xl font-bold text-brand-neon mb-2">
-                {stat.number}
+        {/* Values */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {values.map((value) => {
+            const Icon = value.icon;
+            return (
+              <div key={value.title} className="flex flex-col items-center text-center p-6">
+                <div className="p-3 bg-primary-100 rounded-full mb-4">
+                  <Icon size={24} className="text-primary-600" />
+                </div>
+                <h3 className="text-xl font-bold text-neutral-900 mb-3">
+                  {value.title}
+                </h3>
+                <p className="text-neutral-600">
+                  {value.description}
+                </p>
               </div>
-              <div className="text-brand-light/80">{stat.label}</div>
+            );
+          })}
+        </div>
+
+        {/* Approach */}
+        <div className="mt-20">
+          <div className="bg-primary-50 rounded-2xl p-8 lg:p-12">
+            <h3 className="text-2xl font-bold text-neutral-900 mb-6 text-center">
+              Our Approach
+            </h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <ul className="space-y-4">
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
+                    <span className="text-neutral-700">
+                      Rigorous interpreter selection and ongoing professional development
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
+                    <span className="text-neutral-700">
+                      Comprehensive quality assurance protocols
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <ul className="space-y-4">
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
+                    <span className="text-neutral-700">
+                      Advanced technological solutions for seamless service delivery
+                    </span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <CheckCircle className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
+                    <span className="text-neutral-700">
+                      Dedicated support team available 24/7
+                    </span>
+                  </li>
+                </ul>
+              </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
-    </div>
-  )
-}
-
-AboutCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(PropTypes.string).isRequired,
-  icon: PropTypes.elementType.isRequired
+    </section>
+  );
 };
 
-
-
-export default About
+export default About;
