@@ -1,23 +1,44 @@
 import React from 'react';
 import { Stethoscope, Building2, GraduationCap, Scale, Globe, Users } from 'lucide-react';
+import medicalImg from '../assets/images/medical.jpg';
+import legalImg from '../assets/images/legal.jpg';
+import businessImg from '../assets/images/business.jpg';
+import educationImg from '../assets/images/education.jpg';
+import communityImg from '../assets/images/community.jpg';
+import eventsImg from '../assets/images/events.jpg';
 
-const ServiceCard = ({ title, description, icon: Icon, features }) => (
-  <div className="group bg-white rounded-xl shadow-soft p-6 hover:shadow-lg transition-all duration-300">
-    <div className="flex items-center space-x-4 mb-4">
-      <div className="p-3 bg-primary-100 rounded-lg group-hover:bg-primary-200 transition-colors duration-300">
-        <Icon size={24} className="text-primary-600" />
-      </div>
-      <h3 className="text-xl font-bold text-neutral-900">{title}</h3>
+const ServiceCard = ({ title, description, icon: Icon, features, image }) => (
+  <div className="group bg-white rounded-xl shadow-soft overflow-hidden hover:shadow-lg transition-all duration-300">
+    {/* En-tête de la carte avec image */}
+    <div className="relative h-40 overflow-hidden">
+      <img 
+        src={image} 
+        alt={title} 
+        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
     </div>
-    <p className="text-neutral-600 mb-4">{description}</p>
-    <ul className="space-y-2">
-      {features.map((feature, index) => (
-        <li key={index} className="flex items-center text-sm text-neutral-700">
-          <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2" />
-          {feature}
-        </li>
-      ))}
-    </ul>
+
+    {/* Contenu de la carte */}
+    <div className="p-6">
+      <div className="flex items-center space-x-4 mb-4">
+        <div className="p-3 bg-primary-100 rounded-lg group-hover:bg-primary-200 transition-colors duration-300">
+          <Icon size={24} className="text-primary-600" />
+        </div>
+        <h3 className="text-xl font-bold text-neutral-900">{title}</h3>
+      </div>
+      
+      <p className="text-neutral-600 mb-4">{description}</p>
+      
+      <ul className="space-y-2">
+        {features.map((feature, index) => (
+          <li key={index} className="flex items-center text-sm text-neutral-700">
+            <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2" />
+            {feature}
+          </li>
+        ))}
+      </ul>
+    </div>
   </div>
 );
 
@@ -27,6 +48,7 @@ const Services = () => {
       title: 'Medical Interpretation',
       description: 'Professional medical interpretation ensuring accurate communication in healthcare settings.',
       icon: Stethoscope,
+      image: medicalImg,
       features: [
         'Emergency room support',
         'Patient consultations',
@@ -38,6 +60,7 @@ const Services = () => {
       title: 'Legal Interpretation',
       description: 'Precise legal interpretation services for courts, law firms, and legal proceedings.',
       icon: Scale,
+      image: legalImg,
       features: [
         'Court hearings',
         'Depositions',
@@ -49,6 +72,7 @@ const Services = () => {
       title: 'Business Interpretation',
       description: 'Professional interpretation for corporate meetings and business events.',
       icon: Building2,
+      image: businessImg,
       features: [
         'Board meetings',
         'Negotiations',
@@ -60,6 +84,7 @@ const Services = () => {
       title: 'Educational Interpretation',
       description: 'Supporting communication in educational settings.',
       icon: GraduationCap,
+      image: educationImg,
       features: [
         'Parent-teacher meetings',
         'Special education services',
@@ -71,6 +96,7 @@ const Services = () => {
       title: 'Community Interpretation',
       description: 'Breaking barriers in community settings and social services.',
       icon: Users,
+      image: communityImg,
       features: [
         'Social services appointments',
         'Housing assistance',
@@ -82,6 +108,7 @@ const Services = () => {
       title: 'International Events',
       description: 'Comprehensive interpretation for international gatherings and events.',
       icon: Globe,
+      image: eventsImg,
       features: [
         'Cultural events',
         'International forums',
