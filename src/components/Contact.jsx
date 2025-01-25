@@ -92,7 +92,7 @@ const Contact = () => {
                   Get a Quote
                 </a>
                 <a 
-                  href="https://dbdiandt.up.railway.app/interpreter/register/"
+                  href="https://dbdiandt.up.railway.app/register/choose/"
                   className="btn bg-white border border-primary-600 text-primary-600 
                            hover:bg-primary-50 w-full"
                 >
