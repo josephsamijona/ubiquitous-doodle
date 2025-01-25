@@ -3,12 +3,12 @@ import React from 'react';
 const Hero = () => {
   const handleQuote = (e) => {
     e.preventDefault();
-    window.location.href = 'https://dbdanit.co/quote';
+    window.location.href = 'https://dbdiandt.up.railway.app/home';
   };
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    window.location.href = 'https://dbdanit.co/signup';
+    window.location.href = 'https://dbdiandt.up.railway.app/register/choose/';
   };
 
   return (

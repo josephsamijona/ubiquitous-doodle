@@ -155,7 +155,7 @@ const AboutUs = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a 
-              href="https://dbdanit.co/quote"
+              href="https://dbdiandt.up.railway.app/home"
               className="btn bg-primary-500 text-text-light hover:bg-primary-600
                      transform hover:scale-105 transition-all duration-200
                      shadow-lg hover:shadow-xl"

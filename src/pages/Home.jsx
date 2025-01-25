@@ -49,7 +49,7 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
-                href="https://dbd.co/quote"
+                href="https://dbdiandt.up.railway.app/interpreter/register/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
@@ -57,7 +57,7 @@ const Home = () => {
                 Get Started
               </a>
               <a
-                href="https://dbd.co/signup"
+                href="https://dbdiandt.up.railway.app/interpreter/register/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline"

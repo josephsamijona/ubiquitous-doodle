@@ -84,7 +84,7 @@ const Contact = () => {
       icon: Users,
       title: "Join Our Network",
       content: "Become an interpreter",
-      link: "https://dbd.co/signup"
+      link: "https://dbdiandt.up.railway.app/interpreter/register/"
     },
     {
       icon: Clock,

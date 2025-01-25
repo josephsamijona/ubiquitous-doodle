@@ -68,7 +68,7 @@ const Stats = () => {
             Ready to experience professional interpretation services?
           </p>
           <button 
-            onClick={() => window.location.href = 'https://dbdanit.co/quote'}
+            onClick={() => window.location.href = 'https://dbdiandt.up.railway.app/home'}
             className="btn bg-primary-600 text-white hover:bg-primary-700 
                      transform hover:scale-105 transition-all duration-200
                      shadow-lg hover:shadow-xl"
