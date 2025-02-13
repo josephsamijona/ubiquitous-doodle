@@ -189,12 +189,12 @@ const Press = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a 
-              href="mailto:press@dbdit.com"
+              href="mailto:dbdiandt@gmail.com"
               className="btn bg-primary-500 text-text-light hover:bg-primary-600
                      transform hover:scale-105 transition-all duration-200
                      shadow-lg hover:shadow-xl"
             >
-              press@dbdit.com
+             bdiandt@gmail.com
             </a>
             <a 
               href="tel:+1234567890"
@@ -202,7 +202,8 @@ const Press = () => {
                      transform hover:scale-105 transition-all duration-200
                      shadow-lg hover:shadow-xl"
             >
-              +1 234 567 890
+              +1  774 5080492
+
             </a>
           </div>
         </div>

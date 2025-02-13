@@ -107,13 +107,15 @@ const Footer = () => {
         {/* Contact Info */}
         <div className="mt-12 pt-8 border-t border-primary-700/30">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-text-light/70">
-            <a href="mailto:contact@dbdit.com" className="hover:text-primary-300">
-              contact@dbdit.com
+            <a href="mailto:dbdiandt@gmail.com" className="hover:text-primary-300">
+            dbdiandt@gmail.com
             </a>
             <a href="tel:+1234567890" className="hover:text-primary-300">
-              +1 234 567 890
+              +1 774 5080492
+
             </a>
-            <div>Massachusetts, USA</div>
+            <div>500 GROSSMAN Drive #1064
+            Braintree, MA 02184</div>
           </div>
         </div>
       </div>

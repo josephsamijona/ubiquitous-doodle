@@ -6,19 +6,19 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      info: "contact@dbdit.com",
-      action: "mailto:contact@dbdit.com"
+      info: "dbdiandt@gmail.com",
+      action: "mailto:dbdiandt@gmail.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      info: "+1 234 567 890",
-      action: "tel:+1234567890"
+      info: "+1 774 5080492",
+      action: "tel:+1 774 5080492"
     },
     {
       icon: MapPin,
       title: "Location",
-      info: "Massachusetts, USA",
+      info: "500 GROSSMAN Drive #1064 Braintree, MA 02184",
       action: null
     },
     {
