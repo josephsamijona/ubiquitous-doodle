@@ -4,12 +4,12 @@ import backgroundImage from '../assets/images/conference-interpreting.jpg';
 const Hero = () => {
   const handleQuote = (e) => {
     e.preventDefault();
-    window.location.href = 'https://dbdiandt.up.railway.app/home';
+    window.location.href = 'https://dbdint.up.railway.app/home';
   };
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    window.location.href = 'https://dbdiandt.up.railway.app/register/choose/';
+    window.location.href = 'https://dbdint.up.railway.app/register/choose/';
   };
 
   return (

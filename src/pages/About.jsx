@@ -179,7 +179,7 @@ const About = () => {
               Become part of our team of professional interpreters and help us connect the world.
             </p>
             <a
-              href="https://dbdiandt.up.railway.app/interpreter/register/"
+              href="https://dbdint.up.railway.app/interpreter/register/"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"

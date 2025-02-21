@@ -22,7 +22,7 @@ const Header = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    window.location.href = 'https://dbdiandt.up.railway.app/';
+    window.location.href = 'https://dbdint.up.railway.app/';
   };
 
   return (

@@ -86,13 +86,13 @@ const Contact = () => {
               </p>
               <div className="space-y-4">
                 <a 
-                  href="https://dbdiandt.up.railway.app/home"
+                  href="https://dbdint.up.railway.app/home"
                   className="btn bg-primary-600 text-white hover:bg-primary-700 w-full"
                 >
                   Get a Quote
                 </a>
                 <a 
-                  href="https://dbdiandt.up.railway.app/register/choose/"
+                  href="https://dbdint.up.railway.app/register/choose/"
                   className="btn bg-white border border-primary-600 text-primary-600 
                            hover:bg-primary-50 w-full"
                 >
@@ -113,7 +113,7 @@ const Contact = () => {
                 Send us a message and our team will get back to you promptly.
               </p>
               <a 
-                href="https://dbdiandt.up.railway.app/contact/"
+                href="https://dbdint.up.railway.app/contact/"
                 className="inline-flex items-center justify-center space-x-2 
                          w-full btn bg-primary-600 text-white hover:bg-primary-700 
                          transform hover:scale-105 transition-all duration-200"

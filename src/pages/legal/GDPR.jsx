@@ -158,7 +158,7 @@ const GDPR = () => {
                   dpo@dbdit.com
                 </a>
                 <a 
-                  href="https://dbdiandt.up.railway.app/contact/" 
+                  href="https://dbdint.up.railway.app/contact/" 
                   className="inline-flex items-center btn bg-primary-500 text-text-light 
                            hover:bg-primary-600 transform hover:scale-105 transition-all 
                            duration-200 shadow-lg hover:shadow-xl"
