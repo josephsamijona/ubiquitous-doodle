@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
+import logo from '../assets/images/logo.png'; // Import du logo
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -56,10 +57,17 @@ const Footer = () => {
       {/* Main Footer Content */}
       <div className="container-fluid py-12 lg:py-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
-          {/* Company Info */}
+          {/* Company Info with Logo */}
           <div className="lg:col-span-1">
             <div className="mb-6">
-              <h2 className="text-2xl font-bold mb-4">DBD I&T</h2>
+              <div className="flex items-center mb-4">
+                <img 
+                  src={logo} 
+                  alt="DBD I&T Logo" 
+                  className="h-16 w-auto mr-3"
+                />
+                <h2 className="text-2xl font-bold">DBD I&T</h2>
+              </div>
               <p className="text-text-light/80">
                 We are your voice - Professional interpretation services for all your needs.
               </p>
