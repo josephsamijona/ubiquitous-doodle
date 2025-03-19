@@ -1,5 +1,6 @@
 import React from 'react';
 import backgroundImage from '../assets/images/conference-interpreting.jpg';
+import logo from '../assets/images/logo.png';
 
 const Hero = () => {
   const handleQuote = (e) => {
@@ -14,15 +15,23 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen-80 flex items-center pt-16">
-      {/* Image de fond avec overlay */}
+      {/* Image de fond sans overlay */}
       <div className="absolute inset-0">
         <img 
           src={backgroundImage}
           alt="Professional interpretation services"
           className="w-full h-full object-cover"
         />
-        {/* Overlay gradient pour améliorer la lisibilité du texte */}
-        <div className="absolute inset-0 bg-gradient-to-r from-background-dark/95 to-background-dark/70" />
+        {/* L'overlay gradient a été retiré */}
+      </div>
+
+      {/* Logo à droite - position ajustée et taille augmentée */}
+      <div className="absolute top-24 right-8 z-10">
+        <img 
+          src={logo}
+          alt="DBD I&T Logo"
+          className="h-32 md:h-40 lg:h-48 w-auto"
+        />
       </div>
 
       {/* Contenu principal */}
