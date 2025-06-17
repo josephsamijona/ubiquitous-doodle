@@ -10,7 +10,7 @@ const Hero = () => {
 
   const handleSignUp = (e) => {
     e.preventDefault();
-    window.location.href = 'https://dbdint.up.railway.app/register/choose/';
+    window.location.href = 'https://dbdintportal.up.railway.app/interpreter/register/';
   };
 
   return (
