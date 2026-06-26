@@ -171,9 +171,9 @@ section {
   gap: 0.5rem;
   border-radius: 999px;
   padding: 0.34rem 0.85rem;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(10, 38, 89, 0.12);
-  color: var(--color-primary-700);
+  background: rgba(229, 240, 255, 0.9);
+  border: 1px solid rgba(10, 38, 89, 0.2);
+  color: #0a2659;
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.12em;

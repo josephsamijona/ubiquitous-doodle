@@ -40,8 +40,8 @@ const Header = () => {
     <header 
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/92 backdrop-blur-md border-b border-primary-900/10 shadow-[0_14px_28px_rgba(10,38,89,0.08)]' 
-          : 'bg-primary-900/38 backdrop-blur-md border-b border-white/15'
+          ? 'bg-white/95 backdrop-blur-md border-b border-primary-900/12 shadow-[0_14px_28px_rgba(10,38,89,0.08)]' 
+          : 'bg-primary-900/72 backdrop-blur-md border-b border-white/20'
       }`}
     >
       <div className="container-fluid">
@@ -69,7 +69,7 @@ const Header = () => {
                   className={`text-[0.78rem] uppercase tracking-[0.14em] font-semibold transition-colors duration-200 ${
                     isActivePath(item.href)
                       ? (isScrolled ? 'text-primary-700' : 'text-white')
-                      : (isScrolled ? 'text-secondary-700 hover:text-primary-700' : 'text-white/80 hover:text-white')
+                      : (isScrolled ? 'text-primary-800 hover:text-primary-600' : 'text-white/90 hover:text-white')
                   }`}
                 >
                   <span>{item.name}</span>
@@ -80,8 +80,8 @@ const Header = () => {
               onClick={handleLogin}
               className={`flex items-center space-x-2 border px-5 py-2.5 rounded-full text-[0.74rem] uppercase tracking-[0.12em] font-semibold transition-colors duration-300 ${
                 isScrolled
-                  ? 'border-primary-700/25 text-primary-700 hover:bg-primary-50'
-                  : 'border-white/55 text-white hover:bg-white/14'
+                  ? 'border-primary-700/30 text-primary-700 hover:bg-primary-50'
+                  : 'border-white/70 text-white hover:bg-white/16'
               }`}
             >
               <LogIn size={15} />

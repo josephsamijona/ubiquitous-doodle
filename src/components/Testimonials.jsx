@@ -46,10 +46,10 @@ const Testimonials = () => {
       <div className="container-fluid">
         <div className="max-w-4xl mb-12">
           <span className="eyebrow mb-4">Client Confidence</span>
-          <h2 className="text-5xl md:text-6xl text-secondary-900 mb-4 leading-[0.94]">
+          <h2 className="text-5xl md:text-6xl text-primary-800 mb-4 leading-[0.94]">
             Trusted by teams where clear communication is critical
           </h2>
-          <p className="text-base md:text-lg text-secondary-600 max-w-3xl leading-relaxed">
+          <p className="text-base md:text-lg text-secondary-700 max-w-3xl leading-relaxed">
             We combine professional interpreters, reliable response times, and service consistency to help organizations communicate with confidence.
           </p>
         </div>
@@ -61,7 +61,7 @@ const Testimonials = () => {
               <p className="text-secondary-700 mb-6 leading-relaxed">"{item.quote}"</p>
               <div>
                 <p className="text-secondary-900 text-[1.4rem] leading-none mb-1">{item.name}</p>
-                <p className="text-xs uppercase tracking-[0.1em] text-secondary-500">{item.org}</p>
+                <p className="text-xs uppercase tracking-[0.1em] text-primary-700/85">{item.org}</p>
               </div>
             </article>
           ))}
@@ -77,7 +77,7 @@ const Testimonials = () => {
                     <Icon className="w-5 h-5 text-primary-600" />
                   </div>
                   <h3 className="text-3xl leading-none text-secondary-900 mb-2">{item.title}</h3>
-                  <p className="text-sm text-secondary-600 leading-relaxed">{item.detail}</p>
+                  <p className="text-sm text-secondary-700 leading-relaxed">{item.detail}</p>
                 </div>
               );
             })}

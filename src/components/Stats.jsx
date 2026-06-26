@@ -10,7 +10,7 @@ const StatCard = ({ icon: Icon, value, label, description }) => (
       {value}
     </div>
     <h3 className="text-2xl text-white mb-2">{label}</h3>
-    <p className="text-xs uppercase tracking-[0.08em] text-white/70">{description}</p>
+    <p className="text-xs uppercase tracking-[0.08em] text-white/90">{description}</p>
   </div>
 );
 
@@ -53,11 +53,11 @@ const Stats = () => {
           </div>
 
           <div className="text-center mb-12 relative z-10 max-w-3xl mx-auto">
-            <span className="eyebrow !bg-white/10 !text-primary-100 border border-white/25 mb-4">Performance</span>
+            <span className="eyebrow !bg-primary-100/80 !text-primary-800 border border-primary-200/70 mb-4">Performance</span>
             <h2 className="text-5xl md:text-6xl text-white mb-4 leading-[0.95]">
             Our Impact in Numbers
             </h2>
-            <p className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base md:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed">
               Delivering dependable interpretation outcomes through experienced professionals and responsive support.
             </p>
           </div>
