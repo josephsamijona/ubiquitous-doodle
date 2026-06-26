@@ -23,9 +23,10 @@ const Hero = () => {
           alt="Professional interpretation services"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-900/94 via-primary-900/72 to-primary-700/46" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-900/96 via-primary-900/82 to-primary-700/52" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-900/48 via-transparent to-transparent" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_8%,rgba(255,255,255,0.2),transparent_44%)]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary-900/88 via-primary-900/28 to-primary-900/16" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary-900/90 via-primary-900/30 to-primary-900/18" />
       </div>
 
       <div className="absolute -top-24 -left-20 w-80 h-80 rounded-full bg-primary-200/28 blur-3xl motion-drift-1" />
@@ -42,13 +43,13 @@ const Hero = () => {
       <div className="container-fluid relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-end">
           <div className="lg:col-span-7 max-w-4xl" data-reveal data-reveal-delay="1">
-            <p className="hero-kicker text-white/80 mb-6">Professional Interpretation Services</p>
+            <p className="hero-kicker text-white/90 mb-6 [text-shadow:0_2px_16px_rgba(0,0,0,0.45)]">Professional Interpretation Services</p>
 
-            <h1 className="hero-title text-[3rem] sm:text-[4rem] lg:text-[5.2rem] xl:text-[5.8rem] text-text-light mb-7">
+            <h1 className="hero-title text-[3rem] sm:text-[4rem] lg:text-[5.2rem] xl:text-[5.8rem] text-text-light mb-7 [text-shadow:0_8px_28px_rgba(0,0,0,0.5)]">
               Clear communication for every critical conversation.
             </h1>
 
-            <p className="text-lg md:text-[1.15rem] text-text-light/88 mb-10 max-w-2xl leading-relaxed">
+            <p className="text-lg md:text-[1.15rem] text-white mb-10 max-w-2xl leading-relaxed [text-shadow:0_2px_18px_rgba(0,0,0,0.45)]">
               DBD I&T helps healthcare teams, legal professionals, and organizations communicate with confidence through reliable, culturally informed interpretation.
             </p>
 
@@ -73,7 +74,7 @@ const Hero = () => {
               {trustPoints.map((point) => (
                 <li
                   key={point}
-                  className="text-[0.78rem] uppercase tracking-[0.09em] text-white/90 bg-white/10 border border-white/25 rounded-full px-4 py-3 backdrop-blur-sm text-center"
+                  className="text-[0.78rem] uppercase tracking-[0.09em] text-white bg-white/14 border border-white/30 rounded-full px-4 py-3 backdrop-blur-sm text-center"
                 >
                   {point}
                 </li>
