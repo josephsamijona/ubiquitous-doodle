@@ -94,7 +94,7 @@ const Contact = () => {
                   Request a Quote
                 </a>
                 <a
-                  href="https://dbdint.up.railway.app/register/choose/"
+                  href="https://dbdintportal.up.railway.app/"
                   className="btn border border-primary-300 text-primary-700 hover:bg-primary-50 w-full"
                 >
                   Become an Interpreter Partner

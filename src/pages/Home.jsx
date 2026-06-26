@@ -49,7 +49,7 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
-                href="https://dbdint.up.railway.app/interpreter/register/"
+                href="https://dbdintportal.up.railway.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
@@ -57,7 +57,7 @@ const Home = () => {
                 Get Started
               </a>
               <a
-                href="https://dbdint.up.railway.app/interpreter/register/"
+                href="https://dbdintportal.up.railway.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-outline"

@@ -132,7 +132,7 @@ const Careers = () => {
                     </div>
                   </div>
                   <a 
-                    href="https://dbdint.up.railway.app/interpreter/register/"
+                    href="https://dbdintportal.up.railway.app/"
                     className="btn bg-primary-500 text-text-light hover:bg-primary-600
                            transform hover:scale-105 transition-all duration-200
                            shadow-lg hover:shadow-xl whitespace-nowrap"
@@ -173,7 +173,7 @@ const Careers = () => {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a 
-              href="https://dbdint.up.railway.app/interpreter/register/"
+              href="https://dbdintportal.up.railway.app/"
               className="btn bg-primary-500 text-text-light hover:bg-primary-600
                      transform hover:scale-105 transition-all duration-200
                      shadow-lg hover:shadow-xl"
