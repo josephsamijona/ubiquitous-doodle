@@ -42,7 +42,7 @@ const highlights = [
 
 const Testimonials = () => {
   return (
-    <section className="py-20 md:py-24 px-4 bg-transparent">
+    <section className="py-20 md:py-24 px-4 bg-gradient-to-b from-primary-50/45 to-white">
       <div className="container-fluid">
         <div className="max-w-4xl mb-12">
           <span className="eyebrow mb-4">Client Confidence</span>
@@ -67,12 +67,12 @@ const Testimonials = () => {
           ))}
         </div>
 
-        <div className="section-shell !bg-white/90 p-6 md:p-8">
+        <div className="section-shell !bg-primary-50/55 p-6 md:p-8">
           <div className="grid md:grid-cols-3 gap-4">
             {highlights.map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.title} className="rounded-2xl bg-white/90 border border-secondary-200 p-5">
+                <div key={item.title} className="rounded-2xl bg-white/95 border border-primary-200/70 p-5">
                   <div className="inline-flex p-2 rounded-full bg-primary-50 mb-3">
                     <Icon className="w-5 h-5 text-primary-600" />
                   </div>

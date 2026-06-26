@@ -117,14 +117,14 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-20 md:py-24 bg-transparent">
+    <section className="py-20 md:py-24 bg-gradient-to-b from-primary-50/70 via-white to-primary-50/45">
       <div className="container-fluid">
         <div className="mb-12 md:mb-14 max-w-4xl">
           <span className="eyebrow mb-5">Services</span>
-          <h2 className="text-5xl md:text-6xl text-secondary-900 mb-5 leading-[0.95]">
+          <h2 className="text-5xl md:text-6xl text-primary-800 mb-5 leading-[0.95]">
             Our Services
           </h2>
-          <p className="text-base md:text-lg text-secondary-600 max-w-2xl leading-relaxed">
+          <p className="text-base md:text-lg text-secondary-700 max-w-2xl leading-relaxed">
             Professional interpretation services tailored to your needs, delivered with consistency, confidentiality, and cultural intelligence.
           </p>
         </div>

@@ -28,7 +28,7 @@ const About = () => {
   ];
 
   return (
-    <section className="py-20 md:py-24 bg-transparent">
+    <section className="py-20 md:py-24 bg-gradient-to-b from-white via-primary-50/30 to-white">
       <div className="container-fluid">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div className="relative">
@@ -45,13 +45,13 @@ const About = () => {
 
           <div className="text-left">
             <span className="eyebrow mb-4">About DBD I&T</span>
-            <h2 className="text-5xl md:text-6xl text-secondary-900 mb-6 leading-[0.95]">
+            <h2 className="text-5xl md:text-6xl text-primary-800 mb-6 leading-[0.95]">
               Our Mission
             </h2>
-            <p className="text-base md:text-lg text-secondary-600 mb-6 leading-relaxed">
+            <p className="text-base md:text-lg text-secondary-700 mb-6 leading-relaxed">
               We empower organizations and communities through precise, human-centered interpretation services that build trust and understanding.
             </p>
-            <p className="text-secondary-600 leading-relaxed">
+            <p className="text-secondary-700 leading-relaxed">
               From healthcare and legal settings to business and education, our goal is to help every message be communicated clearly, respectfully, and confidently.
             </p>
           </div>
@@ -63,10 +63,10 @@ const About = () => {
             alt="Global communication"
             className="absolute inset-0 w-full h-full object-cover opacity-10"
           />
-          <div className="relative bg-white/90 backdrop-blur-sm px-8 py-16">
+          <div className="relative bg-primary-50/55 backdrop-blur-sm px-8 py-16">
             <div className="text-center mb-10">
-              <h3 className="text-5xl md:text-6xl text-secondary-900 mb-3 leading-[0.95]">Our Core Values</h3>
-              <p className="text-secondary-600 max-w-2xl mx-auto">Professional standards and compassionate communication are at the center of every interaction we support.</p>
+              <h3 className="text-5xl md:text-6xl text-primary-800 mb-3 leading-[0.95]">Our Core Values</h3>
+              <p className="text-secondary-700 max-w-2xl mx-auto">Professional standards and compassionate communication are at the center of every interaction we support.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {values.map((value) => {
@@ -90,8 +90,8 @@ const About = () => {
         </div>
 
         <div className="relative">
-          <div className="bg-white/85 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-primary-900/10">
-            <h3 className="text-5xl text-secondary-900 mb-8 text-center leading-none">
+          <div className="bg-primary-50/65 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-primary-300/40">
+            <h3 className="text-5xl text-primary-800 mb-8 text-center leading-none">
               Our Approach
             </h3>
             <div className="grid md:grid-cols-2 gap-8">
