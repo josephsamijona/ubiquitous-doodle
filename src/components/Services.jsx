@@ -8,38 +8,36 @@ import communityImg from '../assets/images/community.jpg';
 import eventsImg from '../assets/images/events.jpg';
 
 const ServiceCard = ({ title, description, icon: Icon, features, image }) => (
-  <div className="group bg-white rounded-xl shadow-soft overflow-hidden hover:shadow-lg transition-all duration-300">
-    {/* En-tête de la carte avec image */}
+  <article className="pro-card group overflow-hidden h-full flex flex-col">
     <div className="relative h-40 overflow-hidden">
-      <img 
-        src={image} 
-        alt={title} 
+      <img
+        src={image}
+        alt={title}
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary-900/60" />
     </div>
 
-    {/* Contenu de la carte */}
-    <div className="p-6">
+    <div className="p-6 flex flex-col flex-grow">
       <div className="flex items-center space-x-4 mb-4">
-        <div className="p-3 bg-primary-100 rounded-lg group-hover:bg-primary-200 transition-colors duration-300">
+        <div className="p-3 bg-primary-50 rounded-lg group-hover:bg-primary-100 transition-colors duration-300">
           <Icon size={24} className="text-primary-600" />
         </div>
-        <h3 className="text-xl font-bold text-neutral-900">{title}</h3>
+        <h3 className="text-xl font-bold text-secondary-900">{title}</h3>
       </div>
-      
-      <p className="text-neutral-600 mb-4">{description}</p>
-      
-      <ul className="space-y-2">
+
+      <p className="text-secondary-600 mb-4">{description}</p>
+
+      <ul className="space-y-2 mt-auto">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-center text-sm text-neutral-700">
+          <li key={index} className="flex items-center text-sm text-secondary-700">
             <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2" />
             {feature}
           </li>
         ))}
       </ul>
     </div>
-  </div>
+  </article>
 );
 
 const Services = () => {
@@ -119,15 +117,15 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-20 bg-neutral-50">
+    <section className="py-20 bg-gradient-to-b from-white to-secondary-50">
       <div className="container-fluid">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+        <div className="text-center mb-12 max-w-3xl mx-auto">
+          <span className="eyebrow mb-4">Services</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
             Our Services
           </h2>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            Professional interpretation services tailored to your specific needs,
-            delivered with excellence and cultural sensitivity
+          <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
+            Professional interpretation services tailored to your needs, delivered with consistency, confidentiality, and cultural intelligence.
           </p>
         </div>
 

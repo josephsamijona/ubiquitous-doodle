@@ -11,6 +11,7 @@ import Services from './components/Services';
 import Stats from './components/Stats';
 import About from './components/About';
 import Contact from './components/Contact';
+import Testimonials from './components/Testimonials';
 
 // Company Pages
 import AboutUs from './pages/company/AboutUs';
@@ -34,6 +35,7 @@ const LandingPage = () => (
     <Hero />
     <Services />
     <Stats />
+    <Testimonials />
     <About />
     <Contact />
   </>
