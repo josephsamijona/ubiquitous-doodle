@@ -7,8 +7,8 @@ import educationImg from '../assets/images/education.jpg';
 import communityImg from '../assets/images/community.jpg';
 import eventsImg from '../assets/images/events.jpg';
 
-const ServiceCard = ({ title, description, icon: Icon, features, image }) => (
-  <article className="pro-card group overflow-hidden h-full flex flex-col">
+const ServiceCard = ({ title, description, icon: Icon, features, image, delay }) => (
+  <article className="pro-card group overflow-hidden h-full flex flex-col" data-reveal data-reveal-delay={delay}>
     <div className="relative h-44 overflow-hidden">
       <img
         src={image}
@@ -130,8 +130,8 @@ const Services = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <ServiceCard key={service.title} {...service} />
+          {services.map((service, index) => (
+            <ServiceCard key={service.title} {...service} delay={`${(index % 4) + 1}`} />
           ))}
         </div>
       </div>

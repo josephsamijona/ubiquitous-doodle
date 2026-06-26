@@ -32,7 +32,7 @@ const Contact = () => {
   return (
     <section className="py-20 bg-gradient-to-b from-secondary-50 to-white">
       <div className="container-fluid">
-        <div className="text-center mb-12 max-w-3xl mx-auto">
+        <div className="text-center mb-12 max-w-3xl mx-auto" data-reveal data-reveal-delay="1">
           <span className="eyebrow mb-4">Contact</span>
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
             Contact Us
@@ -45,12 +45,14 @@ const Contact = () => {
         <div className="grid lg:grid-cols-2 gap-12">
           <div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {contactInfo.map((item) => {
+              {contactInfo.map((item, index) => {
                 const Icon = item.icon;
                 return (
                   <div
                     key={item.title}
                     className="pro-card p-6"
+                    data-reveal
+                    data-reveal-delay={`${(index % 4) + 1}`}
                   >
                     <div className="flex items-center space-x-4">
                       <div className="p-3 bg-primary-50 rounded-lg">
@@ -77,7 +79,7 @@ const Contact = () => {
               })}
             </div>
 
-            <div className="mt-8 section-shell p-6">
+            <div className="mt-8 section-shell p-6" data-reveal data-reveal-delay="2">
               <h3 className="text-xl font-bold text-secondary-900 mb-4">
                 Ready to start with DBD I&T?
               </h3>
@@ -101,7 +103,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="section-shell p-8 bg-white">
+          <div className="section-shell p-8 bg-white" data-reveal data-reveal-delay="3">
             <div className="text-center">
               <h3 className="text-xl font-bold text-secondary-900 mb-4">
                 Talk to Our Team

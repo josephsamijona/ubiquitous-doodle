@@ -31,7 +31,7 @@ const About = () => {
     <section className="py-20 md:py-24 bg-gradient-to-b from-white via-primary-50/30 to-white">
       <div className="container-fluid">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-          <div className="relative">
+          <div className="relative" data-reveal data-reveal-delay="1">
             <div className="relative rounded-2xl overflow-hidden shadow-xl border border-secondary-200">
               <img
                 src={teamImage}
@@ -43,7 +43,7 @@ const About = () => {
             <div className="absolute -bottom-4 -right-4 w-64 h-64 bg-primary-100 rounded-full -z-10" />
           </div>
 
-          <div className="text-left">
+          <div className="text-left" data-reveal data-reveal-delay="2">
             <span className="eyebrow mb-4">About DBD I&T</span>
             <h2 className="text-5xl md:text-6xl text-primary-800 mb-6 leading-[0.95]">
               Our Mission
@@ -57,7 +57,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="relative rounded-3xl overflow-hidden mb-20 section-shell">
+        <div className="relative rounded-3xl overflow-hidden mb-20 section-shell" data-reveal data-reveal-delay="2">
           <img
             src={valuesImage}
             alt="Global communication"
@@ -69,10 +69,10 @@ const About = () => {
               <p className="text-secondary-700 max-w-2xl mx-auto">Professional standards and compassionate communication are at the center of every interaction we support.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {values.map((value) => {
+              {values.map((value, index) => {
                 const Icon = value.icon;
                 return (
-                  <div key={value.title} className="pro-card flex flex-col items-center text-center p-6">
+                  <div key={value.title} className="pro-card flex flex-col items-center text-center p-6" data-reveal data-reveal-delay={`${(index % 4) + 1}`}>
                     <div className="p-3 bg-primary-100 rounded-full mb-4">
                       <Icon size={24} className="text-primary-600" />
                     </div>
@@ -89,7 +89,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative" data-reveal data-reveal-delay="3">
           <div className="bg-primary-50/65 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-primary-300/40">
             <h3 className="text-5xl text-primary-800 mb-8 text-center leading-none">
               Our Approach

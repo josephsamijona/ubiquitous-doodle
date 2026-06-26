@@ -44,7 +44,7 @@ const Testimonials = () => {
   return (
     <section className="py-20 md:py-24 px-4 bg-gradient-to-b from-primary-50/45 to-white">
       <div className="container-fluid">
-        <div className="max-w-4xl mb-12">
+        <div className="max-w-4xl mb-12" data-reveal data-reveal-delay="1">
           <span className="eyebrow mb-4">Client Confidence</span>
           <h2 className="text-5xl md:text-6xl text-primary-800 mb-4 leading-[0.94]">
             Trusted by teams where clear communication is critical
@@ -55,8 +55,8 @@ const Testimonials = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6 mb-10">
-          {testimonials.map((item) => (
-            <article key={item.name} className="pro-card p-7 h-full">
+          {testimonials.map((item, index) => (
+            <article key={item.name} className="pro-card p-7 h-full" data-reveal data-reveal-delay={`${(index % 4) + 1}`}>
               <Quote className="w-5 h-5 text-primary-500 mb-4" />
               <p className="text-secondary-700 mb-6 leading-relaxed">"{item.quote}"</p>
               <div>
@@ -67,12 +67,12 @@ const Testimonials = () => {
           ))}
         </div>
 
-        <div className="section-shell !bg-primary-50/55 p-6 md:p-8">
+        <div className="section-shell !bg-primary-50/55 p-6 md:p-8" data-reveal data-reveal-delay="2">
           <div className="grid md:grid-cols-3 gap-4">
             {highlights.map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.title} className="rounded-2xl bg-white/95 border border-primary-200/70 p-5">
+                <div key={item.title} className="rounded-2xl bg-white/95 border border-primary-200/70 p-5" data-reveal data-reveal-delay="3">
                   <div className="inline-flex p-2 rounded-full bg-primary-50 mb-3">
                     <Icon className="w-5 h-5 text-primary-600" />
                   </div>

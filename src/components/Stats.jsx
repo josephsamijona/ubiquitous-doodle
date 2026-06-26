@@ -1,8 +1,8 @@
 import React from 'react';
 import { Clock, Check, Languages, Star } from 'lucide-react';
 
-const StatCard = ({ icon: Icon, value, label, description }) => (
-  <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 text-center h-full">
+const StatCard = ({ icon: Icon, value, label, description, delay }) => (
+  <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-sm p-6 text-center h-full" data-reveal data-reveal-delay={delay}>
     <div className="inline-flex p-2.5 bg-white/15 rounded-full mb-4">
       <Icon size={20} className="text-primary-100" />
     </div>
@@ -52,7 +52,7 @@ const Stats = () => {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_10%,rgba(255,255,255,0.18),transparent_36%)]" />
           </div>
 
-          <div className="text-center mb-12 relative z-10 max-w-3xl mx-auto">
+          <div className="text-center mb-12 relative z-10 max-w-3xl mx-auto" data-reveal data-reveal-delay="1">
             <span className="eyebrow !bg-primary-100/80 !text-primary-800 border border-primary-200/70 mb-4">Performance</span>
             <h2 className="text-5xl md:text-6xl text-white mb-4 leading-[0.95]">
             Our Impact in Numbers
@@ -63,12 +63,12 @@ const Stats = () => {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 relative z-10">
-            {stats.map((stat) => (
-              <StatCard key={stat.label} {...stat} />
+            {stats.map((stat, index) => (
+              <StatCard key={stat.label} {...stat} delay={`${(index % 4) + 1}`} />
             ))}
           </div>
 
-          <div className="mt-12 text-center relative z-10">
+          <div className="mt-12 text-center relative z-10" data-reveal data-reveal-delay="3">
             <p className="text-base md:text-lg text-white/85 mb-6">
               Ready to experience professional interpretation services?
             </p>
