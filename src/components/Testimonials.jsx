@@ -42,42 +42,42 @@ const highlights = [
 
 const Testimonials = () => {
   return (
-    <section className="py-20 px-4 bg-white">
+    <section className="py-20 md:py-24 px-4 bg-transparent">
       <div className="container-fluid">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="max-w-4xl mb-12">
           <span className="eyebrow mb-4">Client Confidence</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
+          <h2 className="text-5xl md:text-6xl text-secondary-900 mb-4 leading-[0.94]">
             Trusted by teams where clear communication is critical
           </h2>
-          <p className="text-lg text-secondary-600">
+          <p className="text-base md:text-lg text-secondary-600 max-w-3xl leading-relaxed">
             We combine professional interpreters, reliable response times, and service consistency to help organizations communicate with confidence.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6 mb-10">
           {testimonials.map((item) => (
-            <article key={item.name} className="pro-card p-6 h-full">
-              <Quote className="w-6 h-6 text-primary-500 mb-4" />
-              <p className="text-secondary-700 mb-5">"{item.quote}"</p>
+            <article key={item.name} className="pro-card p-7 h-full">
+              <Quote className="w-5 h-5 text-primary-500 mb-4" />
+              <p className="text-secondary-700 mb-6 leading-relaxed">"{item.quote}"</p>
               <div>
-                <p className="font-semibold text-secondary-900">{item.name}</p>
-                <p className="text-sm text-secondary-500">{item.org}</p>
+                <p className="text-secondary-900 text-[1.4rem] leading-none mb-1">{item.name}</p>
+                <p className="text-xs uppercase tracking-[0.1em] text-secondary-500">{item.org}</p>
               </div>
             </article>
           ))}
         </div>
 
-        <div className="section-shell !bg-secondary-50 p-6 md:p-8">
+        <div className="section-shell !bg-white/90 p-6 md:p-8">
           <div className="grid md:grid-cols-3 gap-4">
             {highlights.map((item) => {
               const Icon = item.icon;
               return (
-                <div key={item.title} className="rounded-xl bg-white border border-secondary-200 p-5">
-                  <div className="inline-flex p-2 rounded-lg bg-primary-50 mb-3">
+                <div key={item.title} className="rounded-2xl bg-white/90 border border-secondary-200 p-5">
+                  <div className="inline-flex p-2 rounded-full bg-primary-50 mb-3">
                     <Icon className="w-5 h-5 text-primary-600" />
                   </div>
-                  <h3 className="font-bold text-secondary-900 mb-1">{item.title}</h3>
-                  <p className="text-sm text-secondary-600">{item.detail}</p>
+                  <h3 className="text-3xl leading-none text-secondary-900 mb-2">{item.title}</h3>
+                  <p className="text-sm text-secondary-600 leading-relaxed">{item.detail}</p>
                 </div>
               );
             })}

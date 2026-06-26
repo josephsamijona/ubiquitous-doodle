@@ -28,7 +28,7 @@ const About = () => {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 md:py-24 bg-transparent">
       <div className="container-fluid">
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
           <div className="relative">
@@ -45,13 +45,13 @@ const About = () => {
 
           <div className="text-left">
             <span className="eyebrow mb-4">About DBD I&T</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-6">
+            <h2 className="text-5xl md:text-6xl text-secondary-900 mb-6 leading-[0.95]">
               Our Mission
             </h2>
-            <p className="text-lg text-secondary-600 mb-6">
+            <p className="text-base md:text-lg text-secondary-600 mb-6 leading-relaxed">
               We empower organizations and communities through precise, human-centered interpretation services that build trust and understanding.
             </p>
-            <p className="text-secondary-600">
+            <p className="text-secondary-600 leading-relaxed">
               From healthcare and legal settings to business and education, our goal is to help every message be communicated clearly, respectfully, and confidently.
             </p>
           </div>
@@ -65,7 +65,7 @@ const About = () => {
           />
           <div className="relative bg-white/90 backdrop-blur-sm px-8 py-16">
             <div className="text-center mb-10">
-              <h3 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-3">Our Core Values</h3>
+              <h3 className="text-5xl md:text-6xl text-secondary-900 mb-3 leading-[0.95]">Our Core Values</h3>
               <p className="text-secondary-600 max-w-2xl mx-auto">Professional standards and compassionate communication are at the center of every interaction we support.</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -73,13 +73,13 @@ const About = () => {
                 const Icon = value.icon;
                 return (
                   <div key={value.title} className="pro-card flex flex-col items-center text-center p-6">
-                    <div className="p-3 bg-primary-100 rounded-full mb-4 transform hover:scale-110 transition-transform duration-300">
+                    <div className="p-3 bg-primary-100 rounded-full mb-4">
                       <Icon size={24} className="text-primary-600" />
                     </div>
-                    <h3 className="text-xl font-bold text-secondary-900 mb-3">
+                    <h3 className="text-[1.8rem] leading-none text-secondary-900 mb-3">
                       {value.title}
                     </h3>
-                    <p className="text-secondary-600">
+                    <p className="text-secondary-600 text-sm leading-relaxed">
                       {value.description}
                     </p>
                   </div>
@@ -90,20 +90,20 @@ const About = () => {
         </div>
 
         <div className="relative">
-          <div className="bg-primary-50 rounded-2xl p-8 lg:p-12 border border-primary-100">
-            <h3 className="text-2xl font-bold text-secondary-900 mb-6 text-center">
+          <div className="bg-white/85 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-primary-900/10">
+            <h3 className="text-5xl text-secondary-900 mb-8 text-center leading-none">
               Our Approach
             </h3>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <ul className="space-y-4">
-                  <li className="flex items-start space-x-3 hover:transform hover:translate-x-2 transition-transform duration-300">
+                  <li className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
                     <span className="text-secondary-700">
                       Rigorous interpreter selection and ongoing professional development
                     </span>
                   </li>
-                  <li className="flex items-start space-x-3 hover:transform hover:translate-x-2 transition-transform duration-300">
+                  <li className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
                     <span className="text-secondary-700">
                       Comprehensive quality assurance protocols
@@ -113,13 +113,13 @@ const About = () => {
               </div>
               <div>
                 <ul className="space-y-4">
-                  <li className="flex items-start space-x-3 hover:transform hover:translate-x-2 transition-transform duration-300">
+                  <li className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
                     <span className="text-secondary-700">
                       Advanced technological solutions for seamless service delivery
                     </span>
                   </li>
-                  <li className="flex items-start space-x-3 hover:transform hover:translate-x-2 transition-transform duration-300">
+                  <li className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-primary-600 mt-1 flex-shrink-0" />
                     <span className="text-secondary-700">
                       Dedicated support team available 24/7

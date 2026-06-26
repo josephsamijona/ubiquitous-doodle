@@ -9,28 +9,28 @@ import eventsImg from '../assets/images/events.jpg';
 
 const ServiceCard = ({ title, description, icon: Icon, features, image }) => (
   <article className="pro-card group overflow-hidden h-full flex flex-col">
-    <div className="relative h-40 overflow-hidden">
+    <div className="relative h-44 overflow-hidden">
       <img
         src={image}
         alt={title}
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary-900/60" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-primary-900/68" />
     </div>
 
     <div className="p-6 flex flex-col flex-grow">
-      <div className="flex items-center space-x-4 mb-4">
-        <div className="p-3 bg-primary-50 rounded-lg group-hover:bg-primary-100 transition-colors duration-300">
-          <Icon size={24} className="text-primary-600" />
+      <div className="flex items-center justify-between gap-3 mb-4">
+        <h3 className="text-[2rem] leading-none text-secondary-900">{title}</h3>
+        <div className="p-2.5 bg-primary-50 rounded-full group-hover:bg-primary-100 transition-colors duration-300">
+          <Icon size={20} className="text-primary-600" />
         </div>
-        <h3 className="text-xl font-bold text-secondary-900">{title}</h3>
       </div>
 
-      <p className="text-secondary-600 mb-4">{description}</p>
+      <p className="text-secondary-600 mb-4 text-sm leading-relaxed">{description}</p>
 
-      <ul className="space-y-2 mt-auto">
+      <ul className="space-y-2 mt-auto border-t border-primary-900/10 pt-4">
         {features.map((feature, index) => (
-          <li key={index} className="flex items-center text-sm text-secondary-700">
+          <li key={index} className="flex items-center text-xs uppercase tracking-[0.08em] text-secondary-700">
             <span className="w-1.5 h-1.5 bg-primary-500 rounded-full mr-2" />
             {feature}
           </li>
@@ -117,14 +117,14 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-secondary-50">
+    <section className="py-20 md:py-24 bg-transparent">
       <div className="container-fluid">
-        <div className="text-center mb-12 max-w-3xl mx-auto">
-          <span className="eyebrow mb-4">Services</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-900 mb-4">
+        <div className="mb-12 md:mb-14 max-w-4xl">
+          <span className="eyebrow mb-5">Services</span>
+          <h2 className="text-5xl md:text-6xl text-secondary-900 mb-5 leading-[0.95]">
             Our Services
           </h2>
-          <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-secondary-600 max-w-2xl leading-relaxed">
             Professional interpretation services tailored to your needs, delivered with consistency, confidentiality, and cultural intelligence.
           </p>
         </div>

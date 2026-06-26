@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Home, Users, MessageSquare, Phone, LogIn } from 'lucide-react';
+import { Menu, X, LogIn } from 'lucide-react';
 import logo from '../assets/images/logo.png'; // Import du logo
 
 const Header = () => {
@@ -17,10 +17,10 @@ const Header = () => {
   }, []);
 
   const navigation = [
-    { name: 'Home', href: '/', icon: Home },
-    { name: 'About Us', href: '/about-us', icon: Users },
-    { name: 'Services', href: '/services', icon: MessageSquare },
-    { name: 'Contact', href: '/contact', icon: Phone },
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about-us' },
+    { name: 'Services', href: '/services' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   const handleLogin = (e) => {
@@ -40,50 +40,51 @@ const Header = () => {
     <header 
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-background-dark shadow-soft' 
-          : 'bg-background-dark/80 backdrop-blur-sm'
+          ? 'bg-white/92 backdrop-blur-md border-b border-primary-900/10 shadow-[0_14px_28px_rgba(10,38,89,0.08)]' 
+          : 'bg-primary-900/38 backdrop-blur-md border-b border-white/15'
       }`}
     >
       <div className="container-fluid">
-        <nav className="flex items-center justify-between h-24 md:h-28">
+        <nav className="flex items-center justify-between h-20 md:h-[5.5rem]">
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center">
               <img 
                 src={logo} 
                 alt="DBD I&T Logo" 
-                className="h-24 md:h-24 w-auto"
+                className="h-16 md:h-[4.5rem] w-auto"
               />
 
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center gap-8 lg:gap-10">
             {navigation.map((item) => {
-              const Icon = item.icon;
               return (
                 <Link
                   key={item.name}
                   to={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`flex items-center space-x-2 text-sm font-medium transition-colors duration-200 ${
+                  className={`text-[0.78rem] uppercase tracking-[0.14em] font-semibold transition-colors duration-200 ${
                     isActivePath(item.href)
-                      ? 'text-primary-300'
-                      : 'text-text-light/70 hover:text-primary-300'
+                      ? (isScrolled ? 'text-primary-700' : 'text-white')
+                      : (isScrolled ? 'text-secondary-700 hover:text-primary-700' : 'text-white/80 hover:text-white')
                   }`}
                 >
-                  <Icon size={18} />
                   <span>{item.name}</span>
                 </Link>
               );
             })}
             <button 
               onClick={handleLogin}
-              className="flex items-center space-x-2 btn bg-primary-700/30 hover:bg-primary-500 
-                     text-text-light transition-colors duration-300"
+              className={`flex items-center space-x-2 border px-5 py-2.5 rounded-full text-[0.74rem] uppercase tracking-[0.12em] font-semibold transition-colors duration-300 ${
+                isScrolled
+                  ? 'border-primary-700/25 text-primary-700 hover:bg-primary-50'
+                  : 'border-white/55 text-white hover:bg-white/14'
+              }`}
             >
-              <LogIn size={18} />
+              <LogIn size={15} />
               <span>Login</span>
             </button>
           </div>
@@ -92,8 +93,11 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 rounded-md transition-colors duration-200 
-                text-text-light/70 hover:text-primary-300"
+              className={`p-2 rounded-md transition-colors duration-200 ${
+                isScrolled
+                  ? 'text-secondary-700 hover:text-primary-700'
+                  : 'text-text-light/80 hover:text-primary-100'
+              }`}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -103,32 +107,28 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden fade-in">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-background-dark">
+            <div className="px-3 pt-2 pb-4 space-y-1 bg-primary-900/95 backdrop-blur-md border-t border-white/10">
               {navigation.map((item) => {
-                const Icon = item.icon;
                 return (
                   <Link
                     key={item.name}
                     to={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                    className={`flex items-center px-3 py-2.5 rounded-md text-sm uppercase tracking-[0.1em] font-semibold transition-colors duration-200 ${
                       isActivePath(item.href)
-                        ? 'text-primary-300 bg-primary-700/20'
-                        : 'text-text-light/70 hover:text-primary-300'
+                        ? 'text-white bg-white/12'
+                        : 'text-text-light/75 hover:text-white'
                     }`}
                   >
-                    <Icon size={20} />
                     <span>{item.name}</span>
                   </Link>
                 );
               })}
               <button 
                 onClick={handleLogin}
-                className="w-full mt-2 flex items-center justify-center space-x-2 
-                       btn bg-primary-700/30 hover:bg-primary-500 
-                       text-text-light transition-colors duration-300"
+                className="w-full mt-3 flex items-center justify-center space-x-2 border border-white/45 rounded-full py-2.5 text-text-light uppercase tracking-[0.12em] text-xs font-semibold hover:bg-white/12 transition-colors duration-300"
               >
-                <LogIn size={20} />
+                <LogIn size={16} />
                 <span>Login</span>
               </button>
             </div>
