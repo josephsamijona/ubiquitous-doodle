@@ -28,8 +28,8 @@ const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-primary-900/88 via-primary-900/28 to-primary-900/16" />
       </div>
 
-      <div className="absolute -top-24 -left-20 w-80 h-80 rounded-full bg-primary-200/20 blur-3xl" />
-      <div className="absolute bottom-8 right-2 md:right-10 w-[22rem] h-[22rem] rounded-full bg-primary-700/30 blur-3xl" />
+      <div className="absolute -top-24 -left-20 w-80 h-80 rounded-full bg-primary-200/28 blur-3xl motion-drift-1" />
+      <div className="absolute bottom-8 right-2 md:right-10 w-[22rem] h-[22rem] rounded-full bg-primary-700/34 blur-3xl motion-drift-2" />
 
       <div className="absolute top-24 right-8 z-10 hidden lg:block">
         <img
@@ -41,7 +41,7 @@ const Hero = () => {
 
       <div className="container-fluid relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-end">
-          <div className="lg:col-span-7 max-w-4xl">
+          <div className="lg:col-span-7 max-w-4xl" data-reveal data-reveal-delay="1">
             <p className="hero-kicker text-white/80 mb-6">Professional Interpretation Services</p>
 
             <h1 className="hero-title text-[3rem] sm:text-[4rem] lg:text-[5.2rem] xl:text-[5.8rem] text-text-light mb-7">
@@ -81,8 +81,8 @@ const Hero = () => {
             </ul>
           </div>
 
-          <div className="lg:col-span-5 lg:justify-self-end w-full max-w-md">
-            <div className="section-shell !bg-white/92 p-6 md:p-7">
+          <div className="lg:col-span-5 lg:justify-self-end w-full max-w-md" data-reveal data-reveal-delay="2">
+            <div className="section-shell !bg-white/94 p-6 md:p-7">
               <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-primary-700 mb-3">Why Clients Choose DBD I&T</p>
               <h2 className="text-4xl leading-[0.95] text-secondary-900 mb-4">Reliable interpretation when precision matters most.</h2>
               <div className="space-y-4 text-secondary-700">

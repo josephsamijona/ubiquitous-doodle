@@ -33,11 +33,11 @@ import GDPR from './pages/legal/GDPR';
 const LandingPage = () => (
   <>
     <Hero />
-    <Services />
-    <Stats />
-    <Testimonials />
-    <About />
-    <Contact />
+    <div data-reveal data-reveal-delay="1"><Services /></div>
+    <div data-reveal data-reveal-delay="1"><Stats /></div>
+    <div data-reveal data-reveal-delay="2"><Testimonials /></div>
+    <div data-reveal data-reveal-delay="2"><About /></div>
+    <div data-reveal data-reveal-delay="3"><Contact /></div>
   </>
 );
 
@@ -47,6 +47,33 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const revealed = document.querySelectorAll('[data-reveal]');
+    if (!revealed.length) {
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.22,
+        rootMargin: '0px 0px -7% 0px',
+      }
+    );
+
+    revealed.forEach((item) => {
+      item.classList.remove('is-visible');
+      observer.observe(item);
+    });
+
+    return () => observer.disconnect();
   }, [pathname]);
 
   return null;
