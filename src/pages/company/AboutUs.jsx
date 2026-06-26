@@ -85,9 +85,7 @@ const AboutUs = () => {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6 text-primary-700">Our Mission</h2>
             <p className="text-lg text-secondary-600 leading-relaxed">
-              At DBD I&T, we are dedicated to providing exceptional interpretation services that bridge 
-              communication gaps and foster understanding between communities. Our commitment to excellence 
-              and cultural sensitivity sets us apart as a trusted partner in professional interpretation services.
+              At DBD I&T, we deliver high-quality interpretation services that help people and organizations communicate clearly across languages and cultures. Our work is grounded in professionalism, precision, and respect for every client and every conversation.
             </p>
           </div>
         </div>
@@ -163,7 +161,7 @@ const AboutUs = () => {
               Get a Quote
             </a>
             <a 
-              href="https://dbdanit.co/contact"
+              href="/contact"
               className="btn bg-text-light text-primary-700 hover:bg-primary-50
                      transform hover:scale-105 transition-all duration-200
                      shadow-lg hover:shadow-xl"

@@ -37,6 +37,7 @@ body {
   background-color: var(--color-background-light);
   color: var(--color-text-primary);
   line-height: 1.5;
+  scroll-behavior: smooth;
 }
 
 /* Images responsive avec lazy loading */
@@ -85,6 +86,7 @@ img {
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 10px 20px rgba(10, 38, 89, 0.08);
 }
 
 .btn-primary {
@@ -94,6 +96,8 @@ img {
 
 .btn-primary:hover {
   background-color: var(--color-primary-600);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 102, 255, 0.2);
 }
 
 .btn:active {
@@ -114,6 +118,20 @@ img {
   display: grid;
   gap: clamp(1rem, 2.5vw, 2rem);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+}
+
+/* Cartes et sections avec effet subtil */
+section {
+  scroll-margin-top: 6rem;
+}
+
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(10, 38, 89, 0.12);
 }
 
 /* Media Queries avec meilleures pratiques */

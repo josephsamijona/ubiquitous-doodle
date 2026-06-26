@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import logo from '../assets/images/logo.png'; // Import du logo
 
@@ -98,13 +99,13 @@ const Footer = () => {
               <ul className="space-y-3">
                 {section.links.map((link) => (
                   <li key={link.name}>
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className="text-text-light/70 hover:text-primary-300 
                                transition-colors duration-200"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -118,9 +119,8 @@ const Footer = () => {
             <a href="mailto:dbdiandt@gmail.com" className="hover:text-primary-300">
             dbdiandt@gmail.com
             </a>
-            <a href="tel:+1234567890" className="hover:text-primary-300">
+            <a href="tel:+17745080492" className="hover:text-primary-300">
               +1 774 5080492
-
             </a>
             <div>500 GROSSMAN Drive #1064
             Braintree, MA 02184</div>

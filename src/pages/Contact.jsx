@@ -63,7 +63,7 @@ const Contact = () => {
       icon: Phone,
       title: "Call Us",
       content: "+1 774 5080492",
-      link: "tel:+1774 5080492"
+      link: "tel:+17745080492"
     },
     {
       icon: MapPin,

@@ -19,8 +19,8 @@ import communityImage from '../assets/images/community-interpreting.jpg';
 /**
  * Composant ServiceDetailCard
  */
-const ServiceDetailCard = ({ icon: Icon, title, description, features, image, isReversed }) => (
-  <div className={`grid md:grid-cols-2 gap-12 items-center ${isReversed ? 'md:flex-row-reverse' : ''}`}>
+const ServiceDetailCard = ({ icon: Icon, title, description, features, image, isReversed, id }) => (
+  <div id={id} className={`grid md:grid-cols-2 gap-12 items-center ${isReversed ? 'md:flex-row-reverse' : ''}`}>
     <div className="space-y-6">
       <div className="p-3 bg-brand-neon/10 rounded-lg w-fit">
         <Icon className="w-8 h-8 text-brand-neon" />
@@ -56,7 +56,8 @@ ServiceDetailCard.propTypes = {
   description: PropTypes.string.isRequired,
   features: PropTypes.arrayOf(PropTypes.string).isRequired,
   image: PropTypes.string.isRequired,
-  isReversed: PropTypes.bool.isRequired
+  isReversed: PropTypes.bool.isRequired,
+  id: PropTypes.string
 };
 
 /**
@@ -69,6 +70,7 @@ const Services = () => {
 
   const serviceDetails = [
     {
+      id: "medical",
       icon: Stethoscope,
       title: "Medical Interpretation",
       description: "Professional medical interpretation ensuring accurate communication in healthcare settings.",
@@ -83,6 +85,7 @@ const Services = () => {
       ]
     },
     {
+      id: "legal",
       icon: Globe2,
       title: "Conference Interpretation",
       description: "Seamless interpretation for international events and professional meetings.",
@@ -97,6 +100,7 @@ const Services = () => {
       ]
     },
     {
+      id: "business",
       icon: Users,
       title: "Community Services",
       description: "Breaking barriers in legal and educational settings.",
@@ -149,7 +153,7 @@ const Services = () => {
       </section>
 
       {/* Services Overview */}
-      <section className="py-12 px-4">
+      <section id="onsite" className="py-12 px-4">
         <ServicesComponent />
       </section>
 

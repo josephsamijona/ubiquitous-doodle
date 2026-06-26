@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Home, Users, MessageSquare, Phone, LogIn } from 'lucide-react';
 import logo from '../assets/images/logo.png'; // Import du logo
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +25,15 @@ const Header = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
+    setIsMenuOpen(false);
     window.location.href = 'https://dbdintportal.up.railway.app/';
+  };
+
+  const isActivePath = (href) => {
+    if (href === '/') {
+      return location.pathname === '/';
+    }
+    return location.pathname.startsWith(href);
   };
 
   return (
@@ -38,14 +48,14 @@ const Header = () => {
         <nav className="flex items-center justify-between h-24 md:h-28">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="flex items-center">
+            <Link to="/" className="flex items-center">
               <img 
                 src={logo} 
                 alt="DBD I&T Logo" 
                 className="h-24 md:h-24 w-auto"
               />
 
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -53,15 +63,19 @@ const Header = () => {
             {navigation.map((item) => {
               const Icon = item.icon;
               return (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
-                  className="flex items-center space-x-2 text-sm font-medium 
-                    text-text-light/70 hover:text-primary-300 transition-colors duration-200"
+                  to={item.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center space-x-2 text-sm font-medium transition-colors duration-200 ${
+                    isActivePath(item.href)
+                      ? 'text-primary-300'
+                      : 'text-text-light/70 hover:text-primary-300'
+                  }`}
                 >
                   <Icon size={18} />
                   <span>{item.name}</span>
-                </a>
+                </Link>
               );
             })}
             <button 
@@ -93,17 +107,19 @@ const Header = () => {
               {navigation.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
-                    className={`flex items-center space-x-2 px-3 py-2 rounded-md text-base 
-                      font-medium 
-                      text-text-light/70 hover:text-primary-300
-                      transition-colors duration-200`}
+                    to={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                      isActivePath(item.href)
+                        ? 'text-primary-300 bg-primary-700/20'
+                        : 'text-text-light/70 hover:text-primary-300'
+                    }`}
                   >
                     <Icon size={20} />
                     <span>{item.name}</span>
-                  </a>
+                  </Link>
                 );
               })}
               <button 
